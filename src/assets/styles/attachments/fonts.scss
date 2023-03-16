@@ -1,0 +1,15 @@
+@include addFont(Roboto, Regular, roboto-regular, 400, normal);
+@include addFont(Roboto, Bold, roboto-bold, 700, normal);
+
+body {
+	font-family: var(--font-family-default);
+	font-size: var(--font-size-default);
+	line-height: var(--line-height-default);
+	letter-spacing: var(--letter-spacing-default);
+	color: var(--color-default);
+}
+
+button, input {
+	font: inherit;
+}
+
