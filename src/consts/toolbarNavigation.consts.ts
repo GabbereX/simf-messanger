@@ -9,7 +9,7 @@ export const enum ENavigation {
 
 }
 
-export const toolbarNavigation: Array<IToolbarNavigation> = [
+export const toolbarNavigationConsts: Array<IToolbarNavigation> = [
 	{
 		text: ENavigation.DIALOGS,
 		icon: messagesIcon

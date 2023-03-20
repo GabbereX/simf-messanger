@@ -26,8 +26,6 @@ export const Toolbar: FC = () => {
 					name={ 'arrow_sprite' }
 				/>
 			</button>
-
-
 		</div>
 	)
 }

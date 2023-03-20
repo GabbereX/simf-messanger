@@ -1,0 +1,16 @@
+@import "@mixins";
+
+.Input {
+	width: 100%;
+	height: 1.875rem;
+	padding: 0.3125rem 1rem;
+
+	color: inherit;
+
+	background-color: var(--gray-100);
+	border-radius: var(--border-radius-default);
+
+	&:focus {
+		outline: none;
+	}
+}

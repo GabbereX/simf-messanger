@@ -3,9 +3,66 @@ img {
 	max-width: 100%;
 }
 
+//// input
+
+//input {
+//	color: inherit;
+//
+//	&::placeholder {
+//		color: var(--slate-510);
+//		opacity: 1;
+//		transition: opacity 0.3s ease;
+//	}
+//
+//	&::-webkit-input-placeholder {
+//		color: var(--slate-510);
+//		opacity: 1;
+//		transition: opacity 0.3s ease;
+//	}
+//
+//	&::-moz-placeholder {
+//		color: var(--slate-510);
+//		opacity: 1;
+//		transition: opacity 0.3s ease;
+//	}
+//
+//	&:-moz-placeholder {
+//		color: var(--slate-510);
+//		opacity: 1;
+//		transition: opacity 0.3s ease;
+//	}
+//
+//	&:-ms-input-placeholder {
+//		color: var(--slate-510);
+//		opacity: 1;
+//		transition: opacity 0.3s ease;
+//	}
+//
+//	&:focus::placeholder {
+//		opacity: 0;
+//	}
+//
+//	&:focus::-webkit-input-placeholder {
+//		opacity: 0;
+//	}
+//
+//	&:focus::-moz-placeholder {
+//		opacity: 0;
+//	}
+//
+//	&:focus:-moz-placeholder {
+//		opacity: 0;
+//	}
+//
+//	&:focus:-ms-input-placeholder {
+//		opacity: 0;
+//	}
+//}
+
 // main
 .Main {
 	display: flex;
+	background-color: var(--gray-100);
 
 	@include fixHeight(100vh);
 	@include fixHeight(100svh);

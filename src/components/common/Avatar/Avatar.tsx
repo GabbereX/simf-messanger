@@ -20,16 +20,13 @@ export const Avatar: FC<IProps> = ({
 	outline = false,
 	size = ESize.SMALL
 }) => {
-	const avatarClasses = cn('Avatar')
+	const classes = cn('Avatar')
 
 	const isImage = src && alt
 
 	return (
 		<span
-			className={
-				avatarClasses({ outline, size },
-					[ 'transition' ]
-				) }>
+			className={ classes({ outline, size }, [ 'transition' ]) }>
 			{
 				isImage &&
 				<img

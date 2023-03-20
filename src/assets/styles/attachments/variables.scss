@@ -18,6 +18,7 @@
 	--green-400: #27AE60;
 	--red-300: #f27c6e;
 	--red-500: #f53648;
+	--transparent: transparent;
 
 	// fonts
 	--font-family-default: 'Roboto', Verdana, Helvetica, Arial, sans-serif;
@@ -35,4 +36,11 @@
 	// transition
 	--transition-duration-default: .3s;
 	--transition-timing-function-default: ease;
+
+	// shadows
+	--chatlist-right-shadow: 0 1px 2px rgba(97, 97, 97, 0.2), 0 2px 4px rgba(97, 97, 97, 0.2);
+	--nessanger-header-bottom-shadow: 1px 0 2px rgba(97, 97, 97, 0.2), 1px 0 4px rgba(97, 97, 97, 0.2);
+
+	// border
+	--border-radius-default: 0.9375rem;
 }

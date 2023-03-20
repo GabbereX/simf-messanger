@@ -1,7 +1,7 @@
 import { cn } from '@bem-react/classname'
 import { FC, useState } from 'react'
 
-import { ENavigation, toolbarNavigation } from '@consts/toolbarNavigation'
+import { ENavigation, toolbarNavigationConsts } from '@consts/toolbarNavigation.consts'
 
 import './ToolbarNavigation.styles.scss'
 
@@ -18,7 +18,7 @@ export const ToolbarNavigation: FC<IProps> = ({ isFullWidth }) => {
 		<nav className={ classes() }>
 			<ul>
 				{
-					toolbarNavigation.map(({ text, icon }) =>
+					toolbarNavigationConsts.map(({ text, icon }) =>
 						<li
 							key={ text }
 							className={ classes('Item', { checked: text === isChecked }, [ 'transition' ]) }

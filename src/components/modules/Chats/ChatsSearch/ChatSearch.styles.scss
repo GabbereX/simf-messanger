@@ -1,0 +1,7 @@
+@import "@mixins";
+
+.Chats-Search {
+	@include fixHeight(4.375rem);
+	padding: 1.25rem 0.875rem;
+	border-bottom: 1px solid var(--gray-200);
+}

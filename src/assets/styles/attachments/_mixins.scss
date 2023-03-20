@@ -42,3 +42,38 @@
 	display: flex;
 	justify-content: center;
 }
+
+@mixin hidePlaceholder($time: 300, $effect: ease) {
+	&::-webkit-input-placeholder {
+		opacity: 1;
+		transition: opacity #{$time} + ms $effect;
+	}
+	&::-moz-placeholder {
+		opacity: 1;
+		transition: opacity #{$time} + ms $effect;
+	}
+	&:-moz-placeholder {
+		opacity: 1;
+		transition: opacity #{$time} + ms $effect;
+	}
+	&:-ms-input-placeholder {
+		opacity: 1;
+		transition: opacity #{$time} + ms $effect;
+	}
+	&:focus::-webkit-input-placeholder {
+		opacity: 0;
+		transition: opacity #{$time} + ms $effect;
+	}
+	&:focus::-moz-placeholder {
+		opacity: 0;
+		transition: opacity #{$time} + ms $effect;
+	}
+	&:focus:-moz-placeholder {
+		opacity: 0;
+		transition: opacity #{$time} + ms $effect;
+	}
+	&:focus:-ms-input-placeholder {
+		opacity: 0;
+		transition: opacity #{$time} + ms $effect;
+	}
+}
