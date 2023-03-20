@@ -1,6 +1,18 @@
+// tags
+img {
+	max-width: 100%;
+}
+
+// main
 .Main {
-	min-height: 100vh;
-	max-height: 100vh;
-	min-width: 100vw;
-	max-width: 100vw;
+	display: flex;
+
+	@include fixHeight(100vh);
+	@include fixHeight(100svh);
+}
+
+// common
+.transition {
+	transition-duration: var(--transition-duration-default);
+	transition-timing-function: var(--transition-timing-function-default);
 }

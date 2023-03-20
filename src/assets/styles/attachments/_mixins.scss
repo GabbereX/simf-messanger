@@ -11,3 +11,34 @@
 		font-display: swap;
 	}
 }
+
+@mixin fixWidth($value) {
+	max-width: $value;
+	min-width: $value;
+}
+
+@mixin fixHeight($value) {
+	max-height: $value;
+	min-height: $value;
+}
+
+@mixin fixSize($value) {
+	@include fixWidth($value);
+	@include fixHeight($value);
+}
+
+@mixin flexCenter() {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+@mixin flexVerticalCenter() {
+	display: flex;
+	align-items: center;
+}
+
+@mixin flexHorizontalCenter() {
+	display: flex;
+	justify-content: center;
+}

@@ -1,0 +1,14 @@
+<svg
+        xmlns="http://www.w3.org/2000/svg"
+        style="
+		height: 0;
+		width: 0;
+		position: absolute;
+		visibility: hidden
+	"
+>
+    <symbol id="arrow_sprite" viewBox='0 0 19 19'>
+        <path d="M2.21571 9.53674e-06L0 2.11501L7.19714 9.00001L0 15.885L2.21571 18L11.6443 9.00001L2.21571 9.53674e-06Z"/>
+        <path d="M9.43143 0L7.21571 2.115L14.4129 9L7.21571 15.885L9.43143 18L18.86 9L9.43143 0Z"/>
+    </symbol>
+</svg>

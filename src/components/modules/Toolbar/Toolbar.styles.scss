@@ -1,0 +1,42 @@
+@import "@mixins";
+
+.Toolbar {
+	@include fixWidth(var(--toolbar-width));
+	position: relative;
+	color: var(--white);
+	background-color: var(--blue-400);
+	transition-property: max-width, min-width;
+
+	&-Button {
+		@include flexHorizontalCenter();
+		position: absolute;
+		left: 20px;
+		bottom: 20px;
+		padding: 6px 11px;
+		width: calc(100% - 2.5rem);
+		background-color: var(--white);
+		border-radius: 4px;
+		opacity: 0.4;
+		transition-property: opacity;
+
+		&:hover {
+			opacity: 1;
+		}
+
+		&-Arrow {
+			width: 19px;
+			height: 19px;
+			fill: var(--blue-400);
+			transform: rotate(0);
+			transition-property: transform;
+
+			&_rotate {
+				transform: rotate(-180deg);
+			}
+		}
+	}
+
+	&_fullWidth {
+		@include fixWidth(var(--toolbar-full-width));
+	}
+}

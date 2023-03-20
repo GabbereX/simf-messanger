@@ -24,11 +24,14 @@
       "@assets/*": [
         "assets/*"
       ],
+      "@mixins": [
+        "assets/styles/attachments/_mixins.scss"
+      ],
       "@components/*": [
         "components/*"
       ],
-      "@types/*": [
-        "types/*"
+      "@interfaces/*": [
+        "interfaces/*"
       ],
       "@consts/*": [
         "consts/*"

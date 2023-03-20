@@ -14,6 +14,7 @@
 	--blue-500: #1a69b8;
 	--blue-700: #114475;
 	--green-300: #71cd50;
+	--green-310: #01bf93;
 	--green-400: #27AE60;
 	--red-300: #f27c6e;
 	--red-500: #f53648;
@@ -24,4 +25,14 @@
 	--line-height-default: 1.25rem;
 	--letter-spacing-default: 0.025rem;
 	--color-default: var(--blue-700);
+	--font-weight-regular: 400;
+	--font-weight-bold: 700;
+
+	// dimensions
+	--toolbar-width: 5rem;
+	--toolbar-full-width: 15.4375rem;
+
+	// transition
+	--transition-duration-default: .3s;
+	--transition-timing-function-default: ease;
 }

@@ -1,0 +1,22 @@
+@import "@mixins";
+
+.Avatar {
+	display: inline-block;
+	border-radius: 50%;
+	overflow: hidden;
+	transition-property: min-width, max-width, min-height, max-height;
+
+	&_outline {
+		border: 3px solid var(--white);
+	}
+
+	&_size {
+		&_small {
+			@include fixSize(3.125rem)
+		}
+
+		&_big {
+			@include fixSize(4.625rem)
+		}
+	}
+}

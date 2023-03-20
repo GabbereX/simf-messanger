@@ -1,0 +1,40 @@
+@import "@mixins";
+
+.Toolbar-Navigation {
+	font-weight: var(--font-weight-bold);
+	text-transform: uppercase;
+
+	&-Item {
+		@include flexVerticalCenter();
+		@include fixHeight(4.5rem);
+		padding: 0 1.75rem;
+		cursor: pointer;
+		opacity: .4;
+		transition-property: background-color, opacity;
+
+		&:hover {
+			opacity: 1;
+		}
+
+		&_checked {
+			cursor: default;
+			opacity: 1;
+			background-color: var(--blue-500);
+		}
+	}
+
+	&-Icon {
+		margin-right: 1.25rem;
+	}
+
+	&-Text {
+		transform: scale(0, 0);
+		opacity: 0;
+		transition-property: transform, opacity;
+
+		&_visible {
+			transform: scale(1, 1);
+			opacity: 1
+		}
+	}
+}
