@@ -1,31 +1,35 @@
 import { cn } from '@bem-react/classname'
-import { FC, useState } from 'react'
+import { FC } from 'react'
+import { observer } from 'mobx-react-lite'
 
 import { ToolbarProfile } from './ToolbarProfile'
 import { ToolbarNavigation } from './ToolbarNavigation'
-
-import './Toolbar.styles.scss'
 import { Icon } from '@components/common/Icon'
 
-export const Toolbar: FC = () => {
-	const [ isFullWidth, setIsFullWidth ] = useState<boolean>(false)
+import utils from '@store/utils'
 
-	const classes = cn('Toolbar')
+import './Toolbar.styles.scss'
 
-	return (
-		<div className={ classes({ fullWidth: isFullWidth }, [ 'transition' ]) }>
-			<ToolbarProfile isFullWidth={ isFullWidth } />
-			<ToolbarNavigation isFullWidth={ isFullWidth } />
+export const Toolbar: FC = observer(() => {
+		const classes = cn('Toolbar')
 
-			<button
-				className={ classes('Button', [ 'transition' ]) }
-				onClick={ () => setIsFullWidth(!isFullWidth) }
-			>
-				<Icon
-					className={ classes('Button-Arrow', { rotate: isFullWidth }, [ 'transition' ]) }
-					name={ 'arrow_sprite' }
-				/>
-			</button>
-		</div>
-	)
-}
+		const { isToolbarFullWidth: fullWidth } = utils
+
+		return (
+			<div className={ classes({ fullWidth }, [ 'transition' ]) }>
+				<ToolbarProfile />
+				<ToolbarNavigation />
+
+				<button
+					className={ classes('Button', [ 'transition' ]) }
+					onClick={ () => utils.setIsToolbarFullWidthToggle() }
+				>
+					<Icon
+						className={ classes('Button-Arrow', { rotate: fullWidth }, [ 'transition' ]) }
+						name={ 'arrow_sprite' }
+					/>
+				</button>
+			</div>
+		)
+	}
+)

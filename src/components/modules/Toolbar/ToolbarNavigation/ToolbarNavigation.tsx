@@ -4,13 +4,11 @@ import { FC, useState } from 'react'
 import { ENavigation, toolbarNavigationConsts } from '@consts/toolbarNavigation.consts'
 
 import './ToolbarNavigation.styles.scss'
+import utils from '@store/utils'
 
-interface IProps {
-	isFullWidth: boolean
-}
-
-export const ToolbarNavigation: FC<IProps> = ({ isFullWidth }) => {
+export const ToolbarNavigation: FC = () => {
 	const [ isChecked, setIsChecked ] = useState<string>(ENavigation.DIALOGS)
+	const { isToolbarFullWidth: fullWidth } = utils
 
 	const classes = cn('Toolbar-Navigation')
 
@@ -30,7 +28,7 @@ export const ToolbarNavigation: FC<IProps> = ({ isFullWidth }) => {
 								className={ classes('Icon') }
 							/>
 							<span
-								className={ classes('Text', { visible: isFullWidth }, [ 'transition' ]) }
+								className={ classes('Text', { visible: fullWidth }, [ 'transition' ]) }
 							>
 									{ text }
 								</span>

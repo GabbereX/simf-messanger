@@ -5,4 +5,6 @@
 	box-shadow: var(--chatlist-right-shadow);
 	background-color: var(--white);
 	@include fixWidth(21.5625rem);
+	@include fixHeight(calc(100% - var(--chats-search-height)));
+	overflow: scroll;
 }

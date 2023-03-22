@@ -22,9 +22,9 @@
 
 	// fonts
 	--font-family-default: 'Roboto', Verdana, Helvetica, Arial, sans-serif;
-	--font-size-default: 0.875rem;
+	--font-size-default: .875rem;
 	--line-height-default: 1.25rem;
-	--letter-spacing-default: 0.025rem;
+	--letter-spacing-default: .025rem;
 	--color-default: var(--blue-700);
 	--font-weight-regular: 400;
 	--font-weight-bold: 700;
@@ -32,6 +32,7 @@
 	// dimensions
 	--toolbar-width: 5rem;
 	--toolbar-full-width: 15.4375rem;
+	--chats-search-height: 4.375rem;
 
 	// transition
 	--transition-duration-default: .3s;

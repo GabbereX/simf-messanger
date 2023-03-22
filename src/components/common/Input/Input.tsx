@@ -1,16 +1,26 @@
+import { cn } from '@bem-react/classname'
 import { FC } from 'react'
 
 import './Input.styles.scss'
-import { cn } from '@bem-react/classname'
 
-export const Input: FC = () => {
+interface IProps {
+	placeholder?: string
+}
+
+export const Input: FC<IProps> = ({ placeholder }) => {
 	const styles = cn('Input')
 
 	return (
-		<input
-			type='text'
-			placeholder='Поиск'
-			className={ styles() }
-		/>
+		<div className={ styles('Wrapper') }>
+			<input
+				type='text'
+				className={ styles() }
+				required
+			/>
+			<label className={ styles('Label', [ 'transition' ]) }>
+				{ placeholder }
+			</label>
+			<span className={ styles('Focus-Line', [ 'transition' ]) } />
+		</div>
 	)
 }

@@ -1,0 +1,33 @@
+@import '@mixins';
+
+.ChatCompanion {
+	padding: .6875rem .875rem;
+	@include flexVerticalCenter();
+	@include fixHeight(4.5rem);
+	cursor: pointer;
+	transition-property: color, background-color;
+
+	&:hover {
+		color: var(--white);
+		background-color: var(--blue-350);
+	}
+
+	&-Avatar {
+		margin-right: .875rem;
+	}
+
+	&-Fullname {
+		margin-bottom: .375rem;
+		@include fixWidth(calc(100% - 3.125rem));
+		font-weight: var(--font-weight-bold);
+	}
+
+	&-LastMessage {
+		//display: -webkit-box;
+		//overflow: hidden;
+		//-webkit-line-clamp: 1;
+		//-webkit-box-orient: vertical;
+		@include fixWidth(calc(100% - 3.125rem));
+		opacity: .7;
+	}
+}

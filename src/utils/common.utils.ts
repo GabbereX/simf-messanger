@@ -4,7 +4,10 @@ export const getFullName = ({
 	firstName,
 	middleName,
 	lastName
-}: IProfile): string =>
+}: Omit<IProfile, 'avatar'>): string =>
 	firstName
 	+ (middleName ? ' ' + middleName : '')
 	+ (lastName ? ' ' + lastName : '')
+
+export const generateNumber = (countNumber: number): string =>
+	Math.random().toString().slice(-countNumber)

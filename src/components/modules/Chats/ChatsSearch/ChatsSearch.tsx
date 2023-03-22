@@ -9,7 +9,7 @@ export const ChatsSearch: FC = () => {
 
 	return (
 		<div className={ styles() }>
-			<Input />
+			<Input placeholder='Поиск' />
 		</div>
 	)
 }

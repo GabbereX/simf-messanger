@@ -73,3 +73,11 @@ img {
 	transition-duration: var(--transition-duration-default);
 	transition-timing-function: var(--transition-timing-function-default);
 }
+
+.full-width {
+	width: 100%;
+}
+
+.ellipse-1 {
+	@include ellipse(1)
+}
