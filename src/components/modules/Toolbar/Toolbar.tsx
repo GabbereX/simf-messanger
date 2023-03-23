@@ -6,7 +6,7 @@ import { ToolbarProfile } from './ToolbarProfile'
 import { ToolbarNavigation } from './ToolbarNavigation'
 import { Icon } from '@components/common/Icon'
 
-import utils from '@store/utils'
+import utils from '@store/utils.store'
 
 import './Toolbar.styles.scss'
 

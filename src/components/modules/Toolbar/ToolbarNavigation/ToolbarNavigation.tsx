@@ -4,7 +4,7 @@ import { FC, useState } from 'react'
 import { ENavigation, toolbarNavigationConsts } from '@consts/toolbarNavigation.consts'
 
 import './ToolbarNavigation.styles.scss'
-import utils from '@store/utils'
+import utils from '@store/utils.store'
 
 export const ToolbarNavigation: FC = () => {
 	const [ isChecked, setIsChecked ] = useState<string>(ENavigation.DIALOGS)

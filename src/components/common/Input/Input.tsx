@@ -1,13 +1,19 @@
 import { cn } from '@bem-react/classname'
-import { FC } from 'react'
+import { ChangeEvent, FC } from 'react'
 
 import './Input.styles.scss'
 
 interface IProps {
 	placeholder?: string
+	value: string
+	onChange: (e: ChangeEvent<HTMLInputElement>) => void
 }
 
-export const Input: FC<IProps> = ({ placeholder }) => {
+export const Input: FC<IProps> = ({
+	value = '',
+	onChange,
+	placeholder
+}) => {
 	const styles = cn('Input')
 
 	return (
@@ -16,6 +22,8 @@ export const Input: FC<IProps> = ({ placeholder }) => {
 				type='text'
 				className={ styles() }
 				required
+				value={ value }
+				onChange={ onChange }
 			/>
 			<label className={ styles('Label', [ 'transition' ]) }>
 				{ placeholder }

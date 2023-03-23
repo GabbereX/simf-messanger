@@ -1,4 +1,3 @@
-import { IchatCompanion } from '@interfaces/chatCompanion.types'
 import { generateNumber } from '@utils/common.utils'
 
 import avatar_01 from '@assets/images/avatars/01.webp'
@@ -9,14 +8,17 @@ import avatar_05 from '@assets/images/avatars/05.webp'
 import avatar_06 from '@assets/images/avatars/06.webp'
 import avatar_07 from '@assets/images/avatars/07.webp'
 import avatar_08 from '@assets/images/avatars/08.webp'
+import { EStatus } from '@consts/common.const'
+import { IChatsContact } from '@interfaces/chatsContact.types'
 
-export const chatInterlocutors: Array<IchatCompanion> = [
+export const chatsContact: Array<IChatsContact> = [
 	{
 		id: generateNumber(5),
 		avatar: avatar_01,
 		firstName: 'Дмитрий',
 		middleName: 'Анатольевич',
 		lastName: null,
+		status: EStatus.ONLINE,
 		messages: []
 	},
 	{
@@ -25,6 +27,7 @@ export const chatInterlocutors: Array<IchatCompanion> = [
 		firstName: 'Анастасия',
 		middleName: 'Александровна',
 		lastName: null,
+		status: EStatus.ONLINE,
 		messages: []
 	},
 	{
@@ -33,6 +36,7 @@ export const chatInterlocutors: Array<IchatCompanion> = [
 		firstName: 'Диалог',
 		middleName: 'М.',
 		lastName: null,
+		status: EStatus.ONLINE,
 		messages: []
 	},
 	{
@@ -41,6 +45,7 @@ export const chatInterlocutors: Array<IchatCompanion> = [
 		firstName: 'Андрей',
 		middleName: 'В.',
 		lastName: null,
+		status: EStatus.ONLINE,
 		messages: []
 	},
 	{
@@ -49,6 +54,7 @@ export const chatInterlocutors: Array<IchatCompanion> = [
 		firstName: 'Григорий',
 		middleName: 'В.',
 		lastName: null,
+		status: EStatus.ONLINE,
 		messages: []
 	},
 	{
@@ -57,6 +63,7 @@ export const chatInterlocutors: Array<IchatCompanion> = [
 		firstName: 'Анна',
 		middleName: null,
 		lastName: null,
+		status: EStatus.ONLINE,
 		messages: []
 	},
 	{
@@ -65,6 +72,7 @@ export const chatInterlocutors: Array<IchatCompanion> = [
 		firstName: 'Игорь',
 		middleName: null,
 		lastName: 'Хоменко',
+		status: EStatus.ONLINE,
 		messages: []
 	},
 	{
@@ -73,6 +81,7 @@ export const chatInterlocutors: Array<IchatCompanion> = [
 		firstName: 'Алина',
 		middleName: 'Викторовна',
 		lastName: null,
+		status: EStatus.ONLINE,
 		messages: []
 	},
 	{
@@ -81,6 +90,7 @@ export const chatInterlocutors: Array<IchatCompanion> = [
 		firstName: 'Галина',
 		middleName: 'Петровна',
 		lastName: null,
+		status: EStatus.ONLINE,
 		messages: []
 	},
 	{
@@ -89,6 +99,7 @@ export const chatInterlocutors: Array<IchatCompanion> = [
 		firstName: 'Вова',
 		middleName: null,
 		lastName: null,
+		status: EStatus.ONLINE,
 		messages: []
 	},
 	{
@@ -97,7 +108,7 @@ export const chatInterlocutors: Array<IchatCompanion> = [
 		firstName: 'Алексей',
 		middleName: null,
 		lastName: 'Курочкин',
+		status: EStatus.ONLINE,
 		messages: []
 	}
-
 ]

@@ -1,24 +1,51 @@
 import { cn } from '@bem-react/classname'
 import { FC } from 'react'
 
-import { ChatsSearch } from '@components/modules/Chats/ChatsSearch'
-import { ChatCompanion } from '@components/modules/Chats/ChatCompanion'
-import { chatInterlocutors } from '@consts/chatCompanion.const'
+import { ChatsSearchContact } from '@components/modules/Chats/ChatsSearchContact'
+import { ChatsContact } from '@components/modules/Chats/ChatsContact'
+
+import chats from '@store/chats.store'
 
 import './Chats.styles.scss'
+import { observer } from 'mobx-react-lite'
+import { getFullName } from '@utils/common.utils'
+import { IChatsContact } from '@interfaces/chatsContact.types'
 
-export const Chats: FC = () => {
-	const styles = cn('Chats')
+export const Chats: FC = observer(() => {
+		const styles = cn('Chats')
 
-	return (
-		<div className={ styles() }>
-			<ChatsSearch />
-			<ul>
-				{
-					chatInterlocutors.map(item =>
-						<ChatCompanion key={ item.id } { ...item } />)
-				}
-			</ul>
-		</div>
-	)
-}
+		const { chatsContactList, searchContacthValue } = chats
+
+		const getFilteredContacts = (): Array<IChatsContact> =>
+			chatsContactList
+				.filter(contact => {
+					const getString = (value: string): string =>
+						value
+							.toLowerCase()
+							.replace(/\s/g, '')
+
+					return getString(getFullName(contact))
+						.includes(getString(searchContacthValue))
+				})
+
+		return (
+			<div className={ styles() }>
+				<ChatsSearchContact />
+				<ul className={ styles('List') }>
+					{
+						getFilteredContacts().length
+							? (
+								getFilteredContacts().map(contact =>
+									<ChatsContact key={ contact.id } { ...contact } />)
+							)
+							: (
+								<li className={ styles('NotFound') }>
+									Нет ни одного контакта по данному запроcу
+								</li>
+							)
+					}
+				</ul>
+			</div>
+		)
+	}
+)

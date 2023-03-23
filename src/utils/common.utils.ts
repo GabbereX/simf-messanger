@@ -1,10 +1,12 @@
 import { IProfile } from '@interfaces/profile.types'
 
+type TFullNameArgs = Pick<IProfile, 'firstName' | 'middleName' | 'lastName'>
+
 export const getFullName = ({
 	firstName,
 	middleName,
 	lastName
-}: Omit<IProfile, 'avatar'>): string =>
+}: TFullNameArgs): string =>
 	firstName
 	+ (middleName ? ' ' + middleName : '')
 	+ (lastName ? ' ' + lastName : '')

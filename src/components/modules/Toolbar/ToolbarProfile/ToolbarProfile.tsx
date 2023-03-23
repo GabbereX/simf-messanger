@@ -8,10 +8,10 @@ import { ESize } from '@consts/common.const'
 import { Avatar } from '@components/common/Avatar'
 
 import './ToolbarProfile.styles.scss'
-import utils from '@store/utils'
+import utils from '@store/utils.store'
 
 export const ToolbarProfile: FC = () => {
-	const { avatar } = profileFakeData
+	const { avatar, status } = profileFakeData
 	const { isToolbarFullWidth: fullWidth } = utils
 
 	const toolbarProfileClasses = cn('Toolbar-Profile')
@@ -29,8 +29,8 @@ export const ToolbarProfile: FC = () => {
 				<span className={ toolbarProfileClasses('Name') }>
 					{ getFullName(profileFakeData) }
 				</span>
-				<span className={ toolbarProfileClasses('Status') }>
-						Online
+				<span className={ toolbarProfileClasses('Status', { icon: status }) }>
+						{ status.charAt(0).toUpperCase() + status.slice(1) }
 				</span>
 			</div>
 		</div>

@@ -1,6 +1,6 @@
 import { makeAutoObservable } from 'mobx'
 
-class Utils {
+class UtilsStore {
 	isToolbarFullWidth: boolean = false
 
 	constructor() {
@@ -12,6 +12,6 @@ class Utils {
 	}
 }
 
-const classInstance = new Utils()
+const classInstance = new UtilsStore()
 
 export default classInstance

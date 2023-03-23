@@ -3,3 +3,8 @@ export const enum ESize {
 	MIDDLE = 'middle',
 	BIG = 'big'
 }
+
+export const enum EStatus {
+	ONLINE = 'online',
+	OFFLINE = 'offline'
+}

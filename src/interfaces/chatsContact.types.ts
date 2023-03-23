@@ -1,6 +1,6 @@
 import { IProfile } from '@interfaces/profile.types'
 
-export interface IchatCompanion extends IProfile {
+export interface IChatsContact extends IProfile {
 	id: string
 	messages: Array<any>
 }

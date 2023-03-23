@@ -5,6 +5,19 @@
 	box-shadow: var(--chatlist-right-shadow);
 	background-color: var(--white);
 	@include fixWidth(21.5625rem);
-	@include fixHeight(calc(100% - var(--chats-search-height)));
-	overflow: scroll;
+
+	&-List {
+		display: flex;
+		flex-direction: column;
+		@include fixHeight(calc(100% - var(--chats-search-height)));
+		overflow-y: scroll;
+	}
+
+	&-NotFound {
+		@include flexCenter();
+		padding: 1rem;
+		text-align: center;
+		flex-grow: 1;
+		opacity: .7;
+	}
 }

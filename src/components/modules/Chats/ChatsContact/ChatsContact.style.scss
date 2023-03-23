@@ -1,6 +1,6 @@
 @import '@mixins';
 
-.ChatCompanion {
+.Chats-Contact {
 	padding: .6875rem .875rem;
 	@include flexVerticalCenter();
 	@include fixHeight(4.5rem);
@@ -23,10 +23,6 @@
 	}
 
 	&-LastMessage {
-		//display: -webkit-box;
-		//overflow: hidden;
-		//-webkit-line-clamp: 1;
-		//-webkit-box-orient: vertical;
 		@include fixWidth(calc(100% - 3.125rem));
 		opacity: .7;
 	}

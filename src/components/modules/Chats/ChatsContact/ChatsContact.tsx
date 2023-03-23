@@ -1,12 +1,13 @@
 import { cn } from '@bem-react/classname'
 import { FC } from 'react'
 import { getFullName } from '@utils/common.utils'
-import { IchatCompanion } from '@interfaces/chatCompanion.types'
 import { Avatar } from '@components/common/Avatar'
 
-import './ChatCompanuion.style.scss'
+import { IChatsContact } from '@interfaces/chatsContact.types'
 
-export const ChatCompanion: FC<IchatCompanion> = ({
+import './ChatsContact.style.scss'
+
+export const ChatsContact: FC<IChatsContact> = ({
 	id,
 	avatar,
 	firstName,
@@ -14,7 +15,7 @@ export const ChatCompanion: FC<IchatCompanion> = ({
 	lastName,
 	messages
 }) => {
-	const styles = cn('ChatCompanion')
+	const styles = cn('Chats-Contact')
 
 	const fullName = getFullName({
 		firstName,
