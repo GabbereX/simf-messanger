@@ -25,19 +25,16 @@ export const ChatsContact: FC<IChatsContact> = ({
 		lastName
 	})
 
-	const online = status === EStatus.ONLINE
-
 	return (
 		<li className={ styles(null, [ 'transition' ]) }>
-			<span className={ styles('Avatar-Wrapper', { online }) }>
-				<Avatar
-					src={ avatar }
-					alt={ `Аватар ${ fullName }` }
-					fullName={ fullName }
-					online={ online }
-					additionalClassesWrapper={ styles('Avatar') }
-				/>
-			</span>
+			<Avatar
+				src={ avatar }
+				alt={ `Аватар ${ fullName }` }
+				fullName={ fullName }
+				online={ status === EStatus.ONLINE }
+				additionalClassesRoot={ styles('Avatar') }
+			/>
+
 			<div className='full-width'>
 				<div className={ styles('Fullname', [ 'ellipse-1' ]) }>
 					{ fullName }

@@ -6,6 +6,27 @@
 	overflow: hidden;
 	transition-property: min-width, max-width, min-height, max-height;
 
+	&-Wrapper {
+		position: relative;
+		line-height: 0;
+
+		&_online {
+			&::after {
+				content: '';
+				position: absolute;
+				right: 17px;
+				bottom: 1px;
+				@include fixSize(.625rem);
+				background-color: var(--green-300);
+				border-radius: 50%;
+			}
+		}
+	}
+
+	&_online {
+		mask: radial-gradient(8px at 85% 89%, rgba(0, 0, 0, 0) 90%, #000) 0 0
+	}
+
 	&_outline {
 		border: 2px solid var(--white);
 	}
@@ -18,10 +39,6 @@
 		&_big {
 			@include fixSize(4.625rem)
 		}
-	}
-
-	&_online {
-		mask: radial-gradient(8px at 85% 89%, rgba(0, 0, 0, 0) 90%, #000) 0 0
 	}
 
 	&-NotFound {

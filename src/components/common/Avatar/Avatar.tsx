@@ -15,7 +15,7 @@ interface IProps {
 	outline?: boolean
 	size?: ESize.SMALL | ESize.BIG
 	online?: boolean
-	additionalClassesWrapper?: string
+	additionalClassesRoot?: string
 }
 
 export const Avatar: FC<IProps> = ({
@@ -25,33 +25,32 @@ export const Avatar: FC<IProps> = ({
 	outline = false,
 	size = ESize.SMALL,
 	online = false,
-	additionalClassesWrapper = ''
+	additionalClassesRoot = ''
 }) => {
 	const classes = cn('Avatar')
-	const classesWrapper = `${ classes({ outline, size, online }, [ 'transition' ]) } ${ additionalClassesWrapper }`
 
 	const initials = fullName.replace(/[^A-ZА-Я]/g, '') || ''
 
 	return (
-		<span
-			className={ classesWrapper }
-		>
-			{
-				src ? (
-						<img
-							src={ src }
-							alt={ `Аватар пользователя ${ alt }` }
-						/>
-					)
-					: (
-						<div
-							className={ classes('NotFound') }
-							style={ { backgroundColor: getAvatarColor(initials) } }
-						>
-							{ initials }
-						</div>
-					)
-			}
-		</span>
+		<div className={ classes('Wrapper', { online }) }>
+			<span className={ `${ classes({ outline, size, online }, [ 'transition' ]) } ${ additionalClassesRoot }` }>
+				{
+					src ? (
+							<img
+								src={ src }
+								alt={ `Аватар пользователя ${ alt }` }
+							/>
+						)
+						: (
+							<div
+								className={ classes('NotFound') }
+								style={ { backgroundColor: getAvatarColor(initials) } }
+							>
+								{ initials.substring(0, 2) }
+							</div>
+						)
+				}
+			</span>
+		</div>
 	)
 }
