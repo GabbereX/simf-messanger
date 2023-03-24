@@ -18,7 +18,7 @@ export const chatsContact: Array<IChatsContact> = [
 		firstName: 'Дмитрий',
 		middleName: 'Анатольевич',
 		lastName: null,
-		status: EStatus.ONLINE,
+		status: EStatus.OFFLINE,
 		messages: []
 	},
 	{
@@ -36,7 +36,7 @@ export const chatsContact: Array<IChatsContact> = [
 		firstName: 'Диалог',
 		middleName: 'М.',
 		lastName: null,
-		status: EStatus.ONLINE,
+		status: EStatus.OFFLINE,
 		messages: []
 	},
 	{

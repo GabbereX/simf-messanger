@@ -14,16 +14,36 @@
 
 	&-Avatar {
 		margin-right: .875rem;
+
+		&-Wrapper {
+			position: relative;
+			line-height: 0;
+
+			&_online {
+				&::after {
+					content: '';
+					position: absolute;
+					right: 17px;
+					bottom: 1px;
+					@include fixSize(.625rem);
+					background-color: var(--green-300);
+					border-radius: 50%;
+				}
+			}
+
+		}
 	}
 
 	&-Fullname {
 		margin-bottom: .375rem;
-		@include fixWidth(calc(100% - 3.125rem));
+		@include fixWidth(calc(100% - 2.8rem));
 		font-weight: var(--font-weight-bold);
 	}
 
 	&-LastMessage {
-		@include fixWidth(calc(100% - 3.125rem));
+		@include fixWidth(calc(100% - 2.8rem));
 		opacity: .7;
 	}
 }
+
+

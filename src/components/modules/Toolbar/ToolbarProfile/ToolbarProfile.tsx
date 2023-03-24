@@ -15,12 +15,14 @@ export const ToolbarProfile: FC = () => {
 	const { isToolbarFullWidth: fullWidth } = utils
 
 	const toolbarProfileClasses = cn('Toolbar-Profile')
+	const fullName = getFullName(profileFakeData)
 
 	return (
 		<div className={ toolbarProfileClasses({ fullWidth }, [ 'transition' ]) }>
 			<Avatar
 				src={ avatar }
-				alt={ getFullName(profileFakeData) }
+				alt={ `Аватар ${ fullName }` }
+				fullName={ fullName }
 				outline
 				size={ fullWidth ? ESize.BIG : ESize.SMALL }
 			/>

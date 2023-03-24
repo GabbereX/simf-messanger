@@ -19,4 +19,15 @@
 			@include fixSize(4.625rem)
 		}
 	}
+
+	&_online {
+		mask: radial-gradient(8px at 85% 89%, rgba(0, 0, 0, 0) 90%, #000) 0 0
+	}
+
+	&-NotFound {
+		@include flexCenter();
+		@include fixSize(3.125rem);
+		font-size: var(--font-size-very-big);
+		color: var(--white);
+	}
 }

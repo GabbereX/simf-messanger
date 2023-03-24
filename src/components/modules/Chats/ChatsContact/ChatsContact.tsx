@@ -6,6 +6,7 @@ import { Avatar } from '@components/common/Avatar'
 import { IChatsContact } from '@interfaces/chatsContact.types'
 
 import './ChatsContact.style.scss'
+import { EStatus } from '@consts/common.const'
 
 export const ChatsContact: FC<IChatsContact> = ({
 	id,
@@ -13,7 +14,8 @@ export const ChatsContact: FC<IChatsContact> = ({
 	firstName,
 	middleName,
 	lastName,
-	messages
+	messages,
+	status
 }) => {
 	const styles = cn('Chats-Contact')
 
@@ -23,16 +25,19 @@ export const ChatsContact: FC<IChatsContact> = ({
 		lastName
 	})
 
+	const online = status === EStatus.ONLINE
+
 	return (
 		<li className={ styles(null, [ 'transition' ]) }>
-			{
-				avatar &&
+			<span className={ styles('Avatar-Wrapper', { online }) }>
 				<Avatar
 					src={ avatar }
-					alt={ fullName }
+					alt={ `Аватар ${ fullName }` }
+					fullName={ fullName }
+					online={ online }
 					additionalClassesWrapper={ styles('Avatar') }
 				/>
-			}
+			</span>
 			<div className='full-width'>
 				<div className={ styles('Fullname', [ 'ellipse-1' ]) }>
 					{ fullName }
@@ -44,7 +49,6 @@ export const ChatsContact: FC<IChatsContact> = ({
 					}
 				</div>
 			</div>
-
 		</li>
 	)
 }
