@@ -9,7 +9,7 @@ import chats from '@store/chats.store'
 import './Chats.styles.scss'
 import { observer } from 'mobx-react-lite'
 import { getFullName } from '@utils/common.utils'
-import { IChatsContact } from '@interfaces/chatsContact.types'
+import { IChatsContact } from '@interfaces/chats.types'
 import { Scroll } from '@components/common/Scroll'
 
 export const Chats: FC = observer(() => {

@@ -1,0 +1,23 @@
+.Status {
+	position: relative;
+	width: 100%;
+
+	&::after {
+		content: '';
+		position: absolute;
+		left: -1rem;
+		top: 50%;
+		width: 0.5rem;
+		height: 0.5rem;
+		border-radius: 50%;
+		transform: translateY(-50%);
+	}
+
+	&_icon_online::after {
+		background: var(--green-310);
+	}
+
+	&_icon_offline::after {
+		background: var(--red-300);
+	}
+}

@@ -1,0 +1,15 @@
+@import "@mixins";
+
+.Messages-Body {
+	display: flex;
+	flex-direction: column;
+	padding: 1.875rem;
+	@include fixHeight(100%);
+	//min-height: 1000px; // fake
+
+	&-NotFound {
+		@include flexCenter();
+		flex-grow: 1;
+		opacity: .5;
+	}
+}

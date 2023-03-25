@@ -1,0 +1,20 @@
+@import "@mixins";
+
+.Messages-Header {
+	@include flexVerticalCenter();
+	@include fixHeight(var(--header-height));
+	flex-direction: column;
+	padding: .625rem;
+	background-color: var(--white);
+	box-shadow: var(--messanger-header-shadow);
+
+	&-Contact-Name {
+		margin-bottom: .4375rem;
+		font-weight: var(--font-weight-bold);
+	}
+
+	&-Type-Status {
+		display: flex;
+		color: var(--blue-420);
+	}
+}

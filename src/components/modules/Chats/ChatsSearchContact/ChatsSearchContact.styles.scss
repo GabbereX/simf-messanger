@@ -1,7 +1,7 @@
 @import "@mixins";
 
 .Chats-Search-Contact {
-	@include fixHeight(var(--chats-search-height));
+	@include fixHeight(calc(var(--header-height) + 1px));
 	padding: 1.25rem 0.875rem;
 	border-bottom: 1px solid var(--gray-200);
 }

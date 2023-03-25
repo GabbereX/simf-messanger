@@ -35,7 +35,8 @@
 	// dimensions
 	--toolbar-width: 5rem;
 	--toolbar-full-width: 15.4375rem;
-	--chats-search-height: 4.375rem;
+	--header-height: 4.375rem;
+	--messages-footer-height: 3.375rem;
 
 	// transition
 	--transition-duration-default: .3s;
@@ -43,7 +44,9 @@
 
 	// shadows
 	--chatlist-right-shadow: 0 1px 2px rgba(97, 97, 97, 0.2), 0 2px 4px rgba(97, 97, 97, 0.2);
-	--nessanger-header-bottom-shadow: 1px 0 2px rgba(97, 97, 97, 0.2), 1px 0 4px rgba(97, 97, 97, 0.2);
+	--messanger-header-shadow: 1px 0 2px rgba(97, 97, 97, 0.2), 1px 0 4px rgba(97, 97, 97, 0.2);
+	--messanger-footer-shadow: 0px 0px 2px rgba(97, 97, 97, 0.2), 0px 0px 4px rgba(97, 97, 97, 0.2);
+	--hover-shadow: 0 0 6px 0 rgba(0, 0, 0, 0.1) inset;
 
 	// border
 	--border-radius-default: 0.9375rem;

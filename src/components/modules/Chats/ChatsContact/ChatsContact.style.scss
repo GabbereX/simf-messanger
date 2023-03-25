@@ -5,11 +5,16 @@
 	@include flexVerticalCenter();
 	@include fixHeight(4.5rem);
 	cursor: pointer;
-	transition-property: color, background-color;
+	transition-property: color, background-color, box-shadow;
 
-	&:hover {
+	&:hover:not(&_active) {
+		box-shadow: var(--hover-shadow);
+	}
+
+	&_active {
 		color: var(--white);
 		background-color: var(--blue-350);
+		cursor: default;
 	}
 
 	&-Avatar {
@@ -25,6 +30,10 @@
 	&-LastMessage {
 		@include fixWidth(calc(100% - 2.8rem));
 		opacity: .7;
+
+		&_active {
+			opacity: 1;
+		}
 	}
 }
 

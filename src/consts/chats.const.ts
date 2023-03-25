@@ -9,7 +9,7 @@ import avatar_06 from '@assets/images/avatars/06.webp'
 import avatar_07 from '@assets/images/avatars/07.webp'
 import avatar_08 from '@assets/images/avatars/08.webp'
 import { EStatus } from '@consts/common.const'
-import { IChatsContact } from '@interfaces/chatsContact.types'
+import { IChatsContact } from '@interfaces/chats.types'
 
 export const chatsContact: Array<IChatsContact> = [
 	{
@@ -19,6 +19,7 @@ export const chatsContact: Array<IChatsContact> = [
 		middleName: 'Анатольевич',
 		lastName: null,
 		status: EStatus.OFFLINE,
+		typing: false,
 		messages: []
 	},
 	{
@@ -28,6 +29,7 @@ export const chatsContact: Array<IChatsContact> = [
 		middleName: 'Александровна',
 		lastName: null,
 		status: EStatus.ONLINE,
+		typing: true,
 		messages: []
 	},
 	{
@@ -37,6 +39,7 @@ export const chatsContact: Array<IChatsContact> = [
 		middleName: 'М.',
 		lastName: null,
 		status: EStatus.OFFLINE,
+		typing: false,
 		messages: []
 	},
 	{
@@ -46,6 +49,7 @@ export const chatsContact: Array<IChatsContact> = [
 		middleName: 'В.',
 		lastName: null,
 		status: EStatus.ONLINE,
+		typing: false,
 		messages: []
 	},
 	{
@@ -55,6 +59,7 @@ export const chatsContact: Array<IChatsContact> = [
 		middleName: 'В.',
 		lastName: null,
 		status: EStatus.ONLINE,
+		typing: false,
 		messages: []
 	},
 	{
@@ -64,6 +69,7 @@ export const chatsContact: Array<IChatsContact> = [
 		middleName: null,
 		lastName: null,
 		status: EStatus.ONLINE,
+		typing: false,
 		messages: []
 	},
 	{
@@ -73,6 +79,7 @@ export const chatsContact: Array<IChatsContact> = [
 		middleName: null,
 		lastName: 'Хоменко',
 		status: EStatus.ONLINE,
+		typing: false,
 		messages: []
 	},
 	{
@@ -82,6 +89,7 @@ export const chatsContact: Array<IChatsContact> = [
 		middleName: 'Викторовна',
 		lastName: null,
 		status: EStatus.ONLINE,
+		typing: false,
 		messages: []
 	},
 	{
@@ -91,6 +99,7 @@ export const chatsContact: Array<IChatsContact> = [
 		middleName: 'Петровна',
 		lastName: null,
 		status: EStatus.ONLINE,
+		typing: false,
 		messages: []
 	},
 	{
@@ -100,6 +109,7 @@ export const chatsContact: Array<IChatsContact> = [
 		middleName: null,
 		lastName: null,
 		status: EStatus.ONLINE,
+		typing: false,
 		messages: []
 	},
 	{
@@ -109,6 +119,7 @@ export const chatsContact: Array<IChatsContact> = [
 		middleName: null,
 		lastName: 'Курочкин',
 		status: EStatus.ONLINE,
+		typing: false,
 		messages: []
 	}
 ]

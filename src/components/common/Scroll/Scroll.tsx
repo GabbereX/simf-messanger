@@ -17,7 +17,7 @@ export const Scroll: FC<IProps> = ({ children, container }) => {
 		<Scrollbars
 			className={ styles('Container-' + container) }
 			renderThumbVertical={ props => <div { ...props } className={ styles('Thumb') } /> }
-			renderTrackVertical={ props => <div { ...props } className={ styles('Track') } /> }
+			renderTrackVertical={ props => <div { ...props } className={ styles(`Track-${ container }`) } /> }
 			hideTracksWhenNotNeeded
 		>
 			{ children }

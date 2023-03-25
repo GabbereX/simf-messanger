@@ -1,4 +1,4 @@
-import { ENavigation } from '@consts/toolbarNavigation.consts'
+import { ENavigation } from '@consts/toolbar.consts'
 
 export interface IToolbarNavigation {
 	text: ENavigation

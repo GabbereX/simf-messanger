@@ -1,0 +1,38 @@
+@import "@mixins";
+
+.Typing {
+	@include flexVerticalCenter();
+
+	&-Circle {
+		font-size: 24px;
+		animation: scale 0.7s linear infinite;
+		margin-right: .19rem;
+
+		&_id {
+			&_0 {
+				animation-delay: .0s;
+			}
+
+			&_1 {
+				animation-delay: .2s;
+			}
+
+			&_2 {
+				animation-delay: .4s;
+				margin-right: .4375rem;
+			}
+		}
+	}
+}
+
+@keyframes scale {
+	0% {
+		transform: scale(1, 1);
+	}
+	35% {
+		transform: scale(1.5, 1.5);
+	}
+	70% {
+		transform: scale(2.5, 2.5);
+	}
+}
