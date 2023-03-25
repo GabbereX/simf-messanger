@@ -10,6 +10,7 @@ import './Chats.styles.scss'
 import { observer } from 'mobx-react-lite'
 import { getFullName } from '@utils/common.utils'
 import { IChatsContact } from '@interfaces/chatsContact.types'
+import { Scroll } from '@components/common/Scroll'
 
 export const Chats: FC = observer(() => {
 		const styles = cn('Chats')
@@ -31,20 +32,23 @@ export const Chats: FC = observer(() => {
 		return (
 			<div className={ styles() }>
 				<ChatsSearchContact />
-				<ul className={ styles('List') }>
-					{
-						getFilteredContacts().length
-							? (
-								getFilteredContacts().map(contact =>
-									<ChatsContact key={ contact.id } { ...contact } />)
-							)
-							: (
-								<li className={ styles('NotFound') }>
-									Нет ни одного контакта по данному запроcу
-								</li>
-							)
-					}
-				</ul>
+
+				<Scroll container='Chats'>
+					<ul className={ styles('List') }>
+						{
+							getFilteredContacts().length
+								? (
+									getFilteredContacts().map(contact =>
+										<ChatsContact key={ contact.id } { ...contact } />)
+								)
+								: (
+									<li className={ styles('NotFound') }>
+										Нет ни одного контакта по данному запроcу
+									</li>
+								)
+						}
+					</ul>
+				</Scroll>
 			</div>
 		)
 	}

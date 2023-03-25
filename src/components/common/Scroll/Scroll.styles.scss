@@ -1,0 +1,26 @@
+@import "@mixins";
+
+.Scroll {
+	overflow-x: hidden;
+
+	&-Container {
+		&-Chats {
+			@include fixHeight(calc(100% - var(--chats-search-height)));
+		}
+
+		&-Messenger {
+			//@include fixHeight(calc(100% - var(--chats-search-height)));
+		}
+	}
+
+	&-Thumb {
+		background-color: var(--blue-700-opacity);
+		border-radius: .1875rem;
+	}
+
+	&-Track {
+		right: 0.25rem;
+		bottom: 0.875rem;
+		top: 0.875rem;
+	}
+}

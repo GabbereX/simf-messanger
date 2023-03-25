@@ -9,8 +9,6 @@
 	&-List {
 		display: flex;
 		flex-direction: column;
-		@include fixHeight(calc(100% - var(--chats-search-height)));
-		overflow-y: auto;
 	}
 
 	&-NotFound {
