@@ -10,6 +10,7 @@ import avatar_07 from '@assets/images/avatars/07.webp'
 import avatar_08 from '@assets/images/avatars/08.webp'
 import { EStatus } from '@consts/common.const'
 import { IChatsContact } from '@interfaces/chats.types'
+import { getFakeMessages } from '@utils/fakeData.utils'
 
 export const chatsContact: Array<IChatsContact> = [
 	{
@@ -20,7 +21,7 @@ export const chatsContact: Array<IChatsContact> = [
 		lastName: null,
 		status: EStatus.OFFLINE,
 		typing: false,
-		messages: []
+		messages: getFakeMessages(10, '2023 02 24 04:18:17')
 	},
 	{
 		id: generateNumber(5),
