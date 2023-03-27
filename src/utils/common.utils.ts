@@ -1,6 +1,5 @@
 import sha256 from 'crypto-js/sha256'
 import dayjs from 'dayjs'
-import 'dayjs/locale/ru'
 
 import { IProfile } from '@interfaces/profile.types'
 import { IDate, IMessage } from '@interfaces/chats.types'
@@ -33,17 +32,14 @@ export const getDate = (
 	dateFirstMessage: string,
 	addSeconds: number = 0
 ): IDate => {
-	const date = dayjs(dateFirstMessage).add(addSeconds, 'second').locale('ru')
-
-	const formattedDate = (format: string = 'YY MM DD HH:mm'): Array<string> =>
-		date.format(format).split(' ')
+	const date = dayjs(dateFirstMessage).add(addSeconds, 'second')
 
 	return {
 		fullDate: date.format('YY MM DD HH:mm:ss'),
-		day: formattedDate()[2],
-		month: formattedDate()[1],
-		year: formattedDate()[0],
-		time: formattedDate()[3]
+		day: date.format('DD'),
+		month: date.format('MM'),
+		year: date.format('YY'),
+		time: date.format('HH:mm')
 	}
 }
 
