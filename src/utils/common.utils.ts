@@ -3,6 +3,7 @@ import dayjs from 'dayjs'
 import 'dayjs/locale/ru'
 
 import { IProfile } from '@interfaces/profile.types'
+import { IDate, IMessage } from '@interfaces/chats.types'
 
 type TFullNameArgs = Pick<IProfile, 'firstName' | 'middleName' | 'lastName'>
 
@@ -28,19 +29,32 @@ export const getAvatarColor = (initials: string): string => {
 	return `rgb(${ r }, ${ g }, ${ b })`
 }
 
-export const getDate = (dateFirstMessage: string, addSeconds: number = 0) => {
+export const getDate = (
+	dateFirstMessage: string,
+	addSeconds: number = 0
+): IDate => {
 	const date = dayjs(dateFirstMessage).add(addSeconds, 'second').locale('ru')
 
 	const formattedDate = (format: string = 'YY MM DD HH:mm'): Array<string> =>
 		date.format(format).split(' ')
 
 	return {
-		day: formattedDate()[0],
-		month: {
-			MMMM: formattedDate()[1].charAt(0).toUpperCase() + formattedDate()[1].slice(1),
-			MM: formattedDate('YY MMMM DD HH:mm')[1]
-		},
-		year: formattedDate()[2],
+		fullDate: date.format('YY MM DD HH:mm:ss'),
+		day: formattedDate()[2],
+		month: formattedDate()[1],
+		year: formattedDate()[0],
 		time: formattedDate()[3]
 	}
+}
+
+export const compareDate = (
+	message: IMessage,
+	messagePrevious?: IMessage
+): boolean => {
+	if (!messagePrevious) return true
+
+	const fullDate = message.date.fullDate.slice(0, -9)
+	const fullDatPrevious = messagePrevious.date.fullDate.slice(0, -9)
+
+	return fullDate !== fullDatPrevious
 }

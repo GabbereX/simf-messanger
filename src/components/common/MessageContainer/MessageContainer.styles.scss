@@ -1,0 +1,44 @@
+@import "@mixins";
+
+.Message-Container {
+	position: relative;
+	padding: .5rem 3.4375rem .5rem 1rem;
+	max-width: 80%;
+	width: max-content;
+
+	&:not(:last-child) {
+		margin-bottom: 20px;
+	}
+
+	&_flow_inbox {
+
+		background-color: var(--white);
+		border-radius: 1rem 1rem 1rem 0.25rem;
+	}
+
+	&_flow_outbox {
+		margin-left: auto;
+		background-color: var(--blue-410);
+		color: var(--white);
+		border-radius: 1rem 1rem 0.25rem 1rem;
+	}
+
+	&-Time {
+		position: absolute;
+		right: 1rem;
+		bottom: .375rem;
+		font-size: var(--font-size-small);
+		line-height: var(--line-height-small);
+		opacity: .7;
+	}
+
+	&-Date-Label {
+		margin: 0 auto 1.25rem;
+		padding: .5rem 1rem;
+		color: var(--white);
+		font-size: var(--font-size-small);
+		line-height: var(--line-height-small);
+		background-color: var(--slate-300);
+		border-radius: 1.0625rem;
+	}
+}

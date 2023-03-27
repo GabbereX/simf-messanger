@@ -31,7 +31,7 @@ export const chatsContact: Array<IChatsContact> = [
 		lastName: null,
 		status: EStatus.ONLINE,
 		typing: true,
-		messages: []
+		messages: getFakeMessages(14, '2023 03 24 23:24:17')
 	},
 	{
 		id: generateNumber(5),
@@ -41,7 +41,7 @@ export const chatsContact: Array<IChatsContact> = [
 		lastName: null,
 		status: EStatus.OFFLINE,
 		typing: false,
-		messages: []
+		messages: getFakeMessages(8, '2023 03 03 13:19:27')
 	},
 	{
 		id: generateNumber(5),
@@ -51,7 +51,7 @@ export const chatsContact: Array<IChatsContact> = [
 		lastName: null,
 		status: EStatus.ONLINE,
 		typing: false,
-		messages: []
+		messages: getFakeMessages(20, '2023 01 12 18:24:35')
 	},
 	{
 		id: generateNumber(5),
@@ -61,7 +61,7 @@ export const chatsContact: Array<IChatsContact> = [
 		lastName: null,
 		status: EStatus.ONLINE,
 		typing: false,
-		messages: []
+		messages: getFakeMessages(4, '2022 12 12 10:25:35')
 	},
 	{
 		id: generateNumber(5),
@@ -71,7 +71,7 @@ export const chatsContact: Array<IChatsContact> = [
 		lastName: null,
 		status: EStatus.ONLINE,
 		typing: false,
-		messages: []
+		messages: getFakeMessages(4, '2023 02 15 09:01:47')
 	},
 	{
 		id: generateNumber(5),
@@ -81,7 +81,7 @@ export const chatsContact: Array<IChatsContact> = [
 		lastName: 'Хоменко',
 		status: EStatus.ONLINE,
 		typing: false,
-		messages: []
+		messages: getFakeMessages(22, '2023 02 16 19:05:47')
 	},
 	{
 		id: generateNumber(5),
@@ -91,7 +91,7 @@ export const chatsContact: Array<IChatsContact> = [
 		lastName: null,
 		status: EStatus.ONLINE,
 		typing: false,
-		messages: []
+		messages: getFakeMessages(2, '2023 01 16 17:15:15')
 	},
 	{
 		id: generateNumber(5),
@@ -101,7 +101,7 @@ export const chatsContact: Array<IChatsContact> = [
 		lastName: null,
 		status: EStatus.ONLINE,
 		typing: false,
-		messages: []
+		messages: getFakeMessages(3, '2023 02 18 16:16:16')
 	},
 	{
 		id: generateNumber(5),
@@ -111,7 +111,7 @@ export const chatsContact: Array<IChatsContact> = [
 		lastName: null,
 		status: EStatus.ONLINE,
 		typing: false,
-		messages: []
+		messages: getFakeMessages(6, '2023 01 17 10:05:47')
 	},
 	{
 		id: generateNumber(5),

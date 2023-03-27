@@ -11,13 +11,13 @@ export interface IMessage {
 	messageFlow: EMessageFlow
 	messageText: string
 	isRead: boolean
-	date: {
-		day: string
-		month: {
-			MMMM: string
-			MM: string
-		},
-		year: string
-		time: string
-	}
+	date: IDate
+}
+
+export interface IDate {
+	fullDate: string
+	day: string
+	month: string
+	year: string
+	time: string
 }

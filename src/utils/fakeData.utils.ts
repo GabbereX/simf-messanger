@@ -1,6 +1,6 @@
+import 'dayjs/locale/ru'
 import { EMessageFlow, wordsCollection } from '@consts/message.const'
 import { IMessage } from '@interfaces/chats.types'
-import 'dayjs/locale/ru'
 import { getDate } from '@utils/common.utils'
 
 export const getRandomNumber = (min: number, max: number): number =>
@@ -26,14 +26,14 @@ export const getFakeMessages = (messagesCount: number, dateFirstMessage: string)
 	let isReadMessage = true
 	let addedSecconds = 0
 
-	const date = getDate(dateFirstMessage)
+	const initialDate = getDate(dateFirstMessage)
 
 	for (let i = 0; i < messagesCount; i++) {
 		const message: IMessage = {
 			messageFlow: EMessageFlow.INBOX,
 			messageText: '',
 			isRead: true,
-			date
+			date: initialDate
 		}
 
 		// generate fake messageFlow
