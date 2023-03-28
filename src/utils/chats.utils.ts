@@ -1,4 +1,4 @@
-import { IMessage } from '@interfaces/chats.types'
+import { IChatsContact, IMessage } from '@interfaces/chats.types'
 import { Nullable } from '@interfaces/common.types'
 import dayjs from 'dayjs'
 
@@ -24,3 +24,15 @@ export const getLastMessageDate = (lastMessage: Nullable<IMessage>): Nullable<st
 
 export const getMessagesNotReadCount = (messages: Array<IMessage>): number =>
 	messages.length ? messages.filter(({ isRead }) => !isRead).length : 0
+
+export const getSortedContacts = (chatsContactList: Array<IChatsContact>): Array<IChatsContact> =>
+	JSON.parse(JSON.stringify(chatsContactList)).sort((a: IChatsContact, b: IChatsContact) => {
+		const lastMessageA = getLastMessage(a.messages)
+		const lastMessageB = getLastMessage(b.messages)
+
+		const dateA = lastMessageA ? lastMessageA.date.fullDate : '-1'
+		const dateB = lastMessageB ? lastMessageB.date.fullDate : '-1'
+
+		return dateA.localeCompare(dateB)
+	}).reverse()
+

@@ -1,5 +1,5 @@
 import { cn } from '@bem-react/classname'
-import { FC } from 'react'
+import { FC, useEffect } from 'react'
 
 import { ChatsSearchContact } from '@components/modules/Chats/ChatsSearchContact'
 import { ChatsContact } from '@components/modules/Chats/ChatsContact'
@@ -8,29 +8,17 @@ import chats from '@store/chats.store'
 
 import './Chats.styles.scss'
 import { observer } from 'mobx-react-lite'
-import { getFullName } from '@utils/common.utils'
 import { IChatsContact } from '@interfaces/chats.types'
 import { Scroll } from '@components/common/Scroll'
-import { getLastMessage } from '@utils/chats.utils'
+import { getFullName } from '@utils/common.utils'
 
 export const Chats: FC = observer(() => {
 		const styles = cn('Chats')
 
-		const { chatsContactList, searchContacthValue } = chats
-
-		const getSortedContacts = (): Array<IChatsContact> =>
-			JSON.parse(JSON.stringify(chatsContactList)).sort((a: IChatsContact, b: IChatsContact) => {
-				const lastMessageA = getLastMessage(a.messages)
-				const lastMessageB = getLastMessage(b.messages)
-
-				const dateA = lastMessageA ? lastMessageA.date.fullDate : '-1'
-				const dateB = lastMessageB ? lastMessageB.date.fullDate : '-1'
-
-				return dateA.localeCompare(dateB)
-			}).reverse()
+		const { chatsContactList, searchContacthValue, currentChat } = chats
 
 		const getFilteredContacts = (): Array<IChatsContact> =>
-			getSortedContacts()
+			chatsContactList
 				.filter(contact => {
 					const getString = (value: string): string =>
 						value
@@ -40,6 +28,12 @@ export const Chats: FC = observer(() => {
 					return getString(getFullName(contact))
 						.includes(getString(searchContacthValue))
 				})
+
+		useEffect(() => {
+			const { id } = currentChat
+
+			chats.setAllMessageReadInChat(id)
+		}, [ currentChat ])
 
 		return (
 			<div className={ styles() }>

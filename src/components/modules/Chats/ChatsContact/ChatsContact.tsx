@@ -79,7 +79,7 @@ export const ChatsContact: FC<IChatsContact> = observer((contact) => {
 				}
 
 				{
-					messagesNotReadCount > 0 && (
+					(messagesNotReadCount > 0 && !active) && (
 						<span className={ styles('Not-Read-Count') }>
 							{ messagesNotReadCount }
 						</span>
