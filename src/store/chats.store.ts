@@ -3,11 +3,12 @@ import { makeAutoObservable } from 'mobx'
 import { IChatsContact } from '@interfaces/chats.types'
 import { ChangeEvent } from 'react'
 import { getSortedContacts } from '@utils/chats.utils'
+import { EStatus } from '@consts/common.const'
 
 class ChatsContactStore {
 	chatsContactList: Array<IChatsContact> = getSortedContacts(chatsContact)
 	searchContacthValue = ''
-	currentChat: IChatsContact = this.chatsContactList[0]
+	chatContactChecked: string = this.chatsContactList[0].id
 	notReadChatCount: number = 0
 
 	constructor() {
@@ -24,12 +25,22 @@ class ChatsContactStore {
 		})
 	}
 
+	setUpdateStatus(id: string, status: EStatus) {
+		this.chatsContactList.map(contact => {
+			if (contact.id === id) {
+				contact.status = status
+			}
+
+			return contact
+		})
+	}
+
 	setSearchContactValue(e: ChangeEvent<HTMLInputElement>) {
 		this.searchContacthValue = e.target.value
 	}
 
-	setCurrentChat(contact: IChatsContact) {
-		this.currentChat = contact
+	setChatContactChecked(contactID: string) {
+		this.chatContactChecked = contactID
 	}
 
 	setAllMessageReadInChat(id: string) {

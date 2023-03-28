@@ -2,16 +2,14 @@ import { cn } from '@bem-react/classname'
 import { FC } from 'react'
 
 import './MessagesHeader.styles.scss'
-import { observer } from 'mobx-react-lite'
-import chats from '@store/chats.store'
 import { getFullName } from '@utils/common.utils'
 import { Typing } from '@components/common/Typing'
 import { Status } from '@components/common/Status'
+import { IChatsContact } from '@interfaces/chats.types'
 
-export const MessagesHeader: FC = observer(() => {
+export const MessagesHeader: FC<IChatsContact> = (currentChat) => {
 	const styles = cn('Messages-Header')
 
-	const { currentChat } = chats
 	const { typing, status } = currentChat
 
 	const fullName = getFullName(currentChat)
@@ -30,4 +28,4 @@ export const MessagesHeader: FC = observer(() => {
 			</span>
 		</div>
 	)
-})
+}

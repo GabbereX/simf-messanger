@@ -17,45 +17,25 @@ import { Nullable } from '@interfaces/common.types'
 export const ChatsContact: FC<IChatsContact> = observer((contact) => {
 		const styles = cn('Chats-Contact')
 
-		const { currentChat } = chats
-
-		const ref = useRef<Nullable<boolean>>(null)
-
-		const { startFakeContactActivity } = useFakeContactActivity(contact, currentChat)
-
-		useEffect(() => {
-			if (!ref.current) {
-				startFakeContactActivity()
-				ref.current = true
-			}
-
-			return () => {
-				ref.current = null
-			}
-		}, [ ref ])
-
 		const {
 			id,
 			avatar,
-			firstName,
-			middleName,
-			lastName,
 			messages,
 			status,
 			typing
 		} = contact
 
-		const fullName = getFullName({
-			firstName,
-			middleName,
-			lastName
-		})
+		const ref = useRef<Nullable<boolean>>(null)
 
+		const { startFakeContactActivity } = useFakeContactActivity(id)
+		const { chatContactChecked } = chats
+
+		const fullName = getFullName(contact)
 		const lastMessage = getLastMessage(messages)
 		const lastMessageDate = getLastMessageDate(lastMessage)
 		const messagesNotReadCount = getMessagesNotReadCount(messages)
 
-		const active = currentChat.id === id
+		const active = chatContactChecked === id
 
 		const renderLastMessage = (): ReactNode => {
 			if (typing) return <Typing />
@@ -65,10 +45,20 @@ export const ChatsContact: FC<IChatsContact> = observer((contact) => {
 				: lastMessage.messageText
 		}
 
+		useEffect(() => {
+			if (!ref.current) {
+				startFakeContactActivity()
+				ref.current = true
+			}
+			// return () => {
+			// 	ref.current = null
+			// }
+		}, [ ref ])
+
 		return (
 			<li
 				className={ styles({ active }, [ 'transition' ]) }
-				onClick={ () => chats.setCurrentChat(contact) }
+				onClick={ () => chats.setChatContactChecked(id) }
 			>
 				<Avatar
 					src={ avatar }
@@ -101,7 +91,6 @@ export const ChatsContact: FC<IChatsContact> = observer((contact) => {
 							{ messagesNotReadCount }
 						</span>
 					)
-
 				}
 			</li>
 		)

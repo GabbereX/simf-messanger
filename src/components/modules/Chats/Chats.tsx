@@ -15,7 +15,7 @@ import { getFullName } from '@utils/common.utils'
 export const Chats: FC = observer(() => {
 		const styles = cn('Chats')
 
-		const { chatsContactList, searchContacthValue, currentChat } = chats
+		const { chatsContactList, searchContacthValue, chatContactChecked } = chats
 
 		const getFilteredContacts = (): Array<IChatsContact> =>
 			chatsContactList
@@ -30,10 +30,8 @@ export const Chats: FC = observer(() => {
 				})
 
 		useEffect(() => {
-			const { id } = currentChat
-
-			chats.setAllMessageReadInChat(id)
-		}, [ currentChat ])
+			chats.setAllMessageReadInChat(chatContactChecked)
+		}, [ chatContactChecked ])
 
 		return (
 			<div className={ styles() }>
