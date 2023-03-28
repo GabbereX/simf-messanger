@@ -11,6 +11,7 @@ import { observer } from 'mobx-react-lite'
 import { IChatsContact } from '@interfaces/chats.types'
 import { Scroll } from '@components/common/Scroll'
 import { getFullName } from '@utils/common.utils'
+import { getSortedContacts } from '@utils/chats.utils'
 
 export const Chats: FC = observer(() => {
 		const styles = cn('Chats')
@@ -18,7 +19,7 @@ export const Chats: FC = observer(() => {
 		const { chatsContactList, searchContacthValue, chatContactChecked } = chats
 
 		const getFilteredContacts = (): Array<IChatsContact> =>
-			chatsContactList
+			getSortedContacts(chatsContactList)
 				.filter(contact => {
 					const getString = (value: string): string =>
 						value

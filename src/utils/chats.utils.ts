@@ -26,7 +26,7 @@ export const getMessagesNotReadCount = (messages: Array<IMessage>): number =>
 	messages.length ? messages.filter(({ isRead }) => !isRead).length : 0
 
 export const getSortedContacts = (chatsContactList: Array<IChatsContact>): Array<IChatsContact> =>
-	chatsContactList.sort((a, b) => {
+	JSON.parse(JSON.stringify(chatsContactList)).sort((a: IChatsContact, b: IChatsContact) => {
 		const lastMessageA = getLastMessage(a.messages)
 		const lastMessageB = getLastMessage(b.messages)
 

@@ -15,7 +15,7 @@ interface IProps extends IPropsWithChildren {
 export const Scroll: FC<IProps> = observer(({ children, container }) => {
 		const styles = cn('Scroll')
 
-		const { chatContactChecked } = chats
+		const { chatContactChecked, changeMessagesToggle } = chats
 
 		const ref = useRef<Nullable<Scrollbars>>(null)
 
@@ -24,7 +24,7 @@ export const Scroll: FC<IProps> = observer(({ children, container }) => {
 				ref.current.scrollToBottom()
 			}
 
-		}, [ ref, chatContactChecked ])
+		}, [ ref, chatContactChecked, changeMessagesToggle ])
 
 		return (
 			<Scrollbars

@@ -14,7 +14,7 @@ export const ToolbarNavigation: FC = observer(() => {
 
 		const styles = cn('Toolbar-Navigation')
 
-		const { chatsContactList, notReadChatCount } = chats
+		const { chatsContactList, notReadChatCount, changeMessagesToggle } = chats
 
 		useEffect(() => {
 			let count = 0
@@ -24,7 +24,7 @@ export const ToolbarNavigation: FC = observer(() => {
 			)
 
 			chats.setNotReadChatCount(count)
-		}, [ chatsContactList ])
+		}, [ chatsContactList, changeMessagesToggle ])
 
 		return (
 			<nav className={ styles() }>
