@@ -14,6 +14,16 @@ class ChatsContactStore {
 		makeAutoObservable(this)
 	}
 
+	setUpdateContact(newDataContact: IChatsContact) {
+		this.chatsContactList = this.chatsContactList.map(contact => {
+			const { id } = newDataContact
+
+			if (id === contact.id) {
+				return newDataContact
+			} else return contact
+		})
+	}
+
 	setSearchContactValue(e: ChangeEvent<HTMLInputElement>) {
 		this.searchContacthValue = e.target.value
 	}

@@ -29,8 +29,8 @@ export const chatsContact: Array<IChatsContact> = [
 		firstName: 'Анастасия',
 		middleName: 'Александровна',
 		lastName: null,
-		status: EStatus.ONLINE,
-		typing: true,
+		status: EStatus.OFFLINE,
+		typing: false,
 		messages: getFakeMessages(14, '2023 03 24 23:24:17')
 	},
 	{
@@ -49,7 +49,7 @@ export const chatsContact: Array<IChatsContact> = [
 		firstName: 'Андрей',
 		middleName: 'В.',
 		lastName: null,
-		status: EStatus.ONLINE,
+		status: EStatus.OFFLINE,
 		typing: false,
 		messages: getFakeMessages(20, '2023 01 12 18:24:35')
 	},
@@ -59,7 +59,7 @@ export const chatsContact: Array<IChatsContact> = [
 		firstName: 'Григорий',
 		middleName: 'В.',
 		lastName: null,
-		status: EStatus.ONLINE,
+		status: EStatus.OFFLINE,
 		typing: false,
 		messages: getFakeMessages(4, '2022 12 12 10:25:35')
 	},
@@ -69,7 +69,7 @@ export const chatsContact: Array<IChatsContact> = [
 		firstName: 'Анна',
 		middleName: null,
 		lastName: null,
-		status: EStatus.ONLINE,
+		status: EStatus.OFFLINE,
 		typing: false,
 		messages: getFakeMessages(4, '2023 02 15 09:01:47')
 	},
@@ -79,7 +79,7 @@ export const chatsContact: Array<IChatsContact> = [
 		firstName: 'Игорь',
 		middleName: null,
 		lastName: 'Хоменко',
-		status: EStatus.ONLINE,
+		status: EStatus.OFFLINE,
 		typing: false,
 		messages: getFakeMessages(22, '2023 02 16 19:05:47')
 	},
@@ -89,7 +89,7 @@ export const chatsContact: Array<IChatsContact> = [
 		firstName: 'Алина',
 		middleName: 'Викторовна',
 		lastName: null,
-		status: EStatus.ONLINE,
+		status: EStatus.OFFLINE,
 		typing: false,
 		messages: getFakeMessages(2, '2023 01 16 17:15:15')
 	},
@@ -99,7 +99,7 @@ export const chatsContact: Array<IChatsContact> = [
 		firstName: 'Галина',
 		middleName: 'Петровна',
 		lastName: null,
-		status: EStatus.ONLINE,
+		status: EStatus.OFFLINE,
 		typing: false,
 		messages: getFakeMessages(3, '2023 02 18 16:16:16')
 	},
@@ -109,7 +109,7 @@ export const chatsContact: Array<IChatsContact> = [
 		firstName: 'Вова',
 		middleName: null,
 		lastName: null,
-		status: EStatus.ONLINE,
+		status: EStatus.OFFLINE,
 		typing: false,
 		messages: getFakeMessages(6, '2023 01 17 10:05:47')
 	},
@@ -119,7 +119,7 @@ export const chatsContact: Array<IChatsContact> = [
 		firstName: 'Алексей',
 		middleName: null,
 		lastName: 'Курочкин',
-		status: EStatus.ONLINE,
+		status: EStatus.OFFLINE,
 		typing: false,
 		messages: []
 	}

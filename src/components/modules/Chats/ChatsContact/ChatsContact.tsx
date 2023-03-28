@@ -1,5 +1,5 @@
 import { cn } from '@bem-react/classname'
-import { FC, ReactNode } from 'react'
+import { FC, ReactNode, useEffect, useRef } from 'react'
 import { getFullName } from '@utils/common.utils'
 import { Avatar } from '@components/common/Avatar'
 
@@ -11,9 +11,28 @@ import chats from '@store/chats.store'
 import { observer } from 'mobx-react-lite'
 import { Typing } from '@components/common/Typing'
 import { getLastMessage, getLastMessageDate, getMessagesNotReadCount } from '@utils/chats.utils'
+import { useFakeContactActivity } from '@hooks/useFakeContactActivity'
+import { Nullable } from '@interfaces/common.types'
 
 export const ChatsContact: FC<IChatsContact> = observer((contact) => {
 		const styles = cn('Chats-Contact')
+
+		const { currentChat } = chats
+
+		const ref = useRef<Nullable<boolean>>(null)
+
+		const { startFakeContactActivity } = useFakeContactActivity(contact, currentChat)
+
+		useEffect(() => {
+			if (!ref.current) {
+				startFakeContactActivity()
+				ref.current = true
+			}
+
+			return () => {
+				ref.current = null
+			}
+		}, [ ref ])
 
 		const {
 			id,
@@ -25,8 +44,6 @@ export const ChatsContact: FC<IChatsContact> = observer((contact) => {
 			status,
 			typing
 		} = contact
-
-		const { currentChat } = chats
 
 		const fullName = getFullName({
 			firstName,
