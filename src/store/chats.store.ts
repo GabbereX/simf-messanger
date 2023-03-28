@@ -7,6 +7,7 @@ class ChatsContactStore {
 	chatsContactList: Array<IChatsContact> = chatsContact
 	searchContacthValue = ''
 	currentChat: IChatsContact = chatsContact[0]
+	notReadChatCount: number = 0
 
 	constructor() {
 		makeAutoObservable(this)
@@ -18,6 +19,10 @@ class ChatsContactStore {
 
 	setCurrentChat(contact: IChatsContact) {
 		this.currentChat = contact
+	}
+
+	setNotReadChatCount(count: number) {
+		this.notReadChatCount = count
 	}
 }
 

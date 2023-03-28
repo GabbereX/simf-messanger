@@ -1,41 +1,63 @@
 import { cn } from '@bem-react/classname'
-import { FC, useState } from 'react'
+import { FC, useEffect, useState } from 'react'
 
 import { ENavigation, toolbarConsts } from '@consts/toolbar.consts'
 
 import './ToolbarNavigation.styles.scss'
 import utils from '@store/utils.store'
+import chats from '@store/chats.store'
+import { observer } from 'mobx-react-lite'
 
-export const ToolbarNavigation: FC = () => {
-	const [ isChecked, setIsChecked ] = useState<string>(ENavigation.DIALOGS)
-	const { isToolbarFullWidth: fullWidth } = utils
+export const ToolbarNavigation: FC = observer(() => {
+		const [ isChecked, setIsChecked ] = useState<string>(ENavigation.DIALOGS)
+		const { isToolbarFullWidth: fullWidth } = utils
 
-	const classes = cn('Toolbar-Navigation')
+		const styles = cn('Toolbar-Navigation')
 
-	return (
-		<nav className={ classes() }>
-			<ul>
-				{
-					toolbarConsts.map(({ text, icon }) =>
-						<li
-							key={ text }
-							className={ classes('Item', { checked: text === isChecked }, [ 'transition' ]) }
-							onClick={ () => setIsChecked(text) }
-						>
-							<img
-								src={ icon }
-								alt={ text }
-								className={ classes('Icon') }
-							/>
-							<span
-								className={ classes('Text', { visible: fullWidth }, [ 'transition' ]) }
+		const { chatsContactList, notReadChatCount } = chats
+
+		useEffect(() => {
+			let count = 0
+
+			chatsContactList.map(({ messages }) =>
+				messages.find(({ isRead }) => !isRead) && (count += 1)
+			)
+
+			chats.setNotReadChatCount(count)
+		}, [ chatsContactList ])
+
+		return (
+			<nav className={ styles() }>
+				<ul>
+					{
+						toolbarConsts.map(({ text, icon }) =>
+							<li
+								key={ text }
+								className={ styles('Item', { checked: text === isChecked }, [ 'transition' ]) }
+								onClick={ () => setIsChecked(text) }
 							>
-									{ text }
-								</span>
-						</li>
-					)
-				}
-			</ul>
-		</nav>
-	)
-}
+								<img
+									src={ icon }
+									alt={ text }
+									className={ styles('Icon') }
+								/>
+								{
+									(notReadChatCount > 0 && text === ENavigation.DIALOGS) && (
+										<span className={ styles('Not-Read-Count', { visible: fullWidth }, [ 'transition' ]) }>
+											{ notReadChatCount }
+										</span>
+									)
+								}
+								<span
+									className={ styles('Text', { visible: fullWidth }, [ 'transition' ]) }
+								>
+								{ text }
+							</span>
+							</li>
+						)
+					}
+				</ul>
+			</nav>
+		)
+	}
+)

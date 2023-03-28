@@ -10,6 +10,7 @@ import { EStatus } from '@consts/common.const'
 import chats from '@store/chats.store'
 import { observer } from 'mobx-react-lite'
 import { Typing } from '@components/common/Typing'
+import { getLastMessage, getLastMessageDate, getMessagesNotReadCount } from '@utils/chats.utils'
 
 export const ChatsContact: FC<IChatsContact> = observer((contact) => {
 		const styles = cn('Chats-Contact')
@@ -33,14 +34,18 @@ export const ChatsContact: FC<IChatsContact> = observer((contact) => {
 			lastName
 		})
 
+		const lastMessage = getLastMessage(messages)
+		const lastMessageDate = getLastMessageDate(lastMessage)
+		const messagesNotReadCount = getMessagesNotReadCount(messages)
+
 		const active = currentChat.id === id
 
 		const renderLastMessage = (): ReactNode => {
 			if (typing) return <Typing />
 
-			return !messages.length
+			return !lastMessage
 				? 'Нет сообщений'
-				: ''
+				: lastMessage.messageText
 		}
 
 		return (
@@ -60,10 +65,27 @@ export const ChatsContact: FC<IChatsContact> = observer((contact) => {
 					<div className={ styles('Fullname', [ 'ellipse-1' ]) }>
 						{ fullName }
 					</div>
-					<div className={ styles('LastMessage', { active }, [ 'ellipse-1' ]) }>
+					<div className={ styles('Last-Message', { active }, [ 'ellipse-1' ]) }>
 						{ renderLastMessage() }
 					</div>
 				</div>
+
+				{
+					lastMessageDate && (
+						<span className={ styles('Last-Message-Date') }>
+							{ lastMessageDate }
+						</span>
+					)
+				}
+
+				{
+					messagesNotReadCount > 0 && (
+						<span className={ styles('Not-Read-Count') }>
+							{ messagesNotReadCount }
+						</span>
+					)
+
+				}
 			</li>
 		)
 	}

@@ -5,6 +5,7 @@
 	padding: .5rem 3.4375rem .5rem 1rem;
 	max-width: 80%;
 	width: max-content;
+	box-shadow: var(--message-container-shadow);
 
 	&:not(:last-child) {
 		margin-bottom: 20px;

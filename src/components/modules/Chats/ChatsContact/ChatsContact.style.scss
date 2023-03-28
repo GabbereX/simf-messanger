@@ -1,6 +1,7 @@
 @import '@mixins';
 
 .Chats-Contact {
+	position: relative;
 	padding: .6875rem .875rem;
 	@include flexVerticalCenter();
 	@include fixHeight(4.5rem);
@@ -23,18 +24,38 @@
 
 	&-Fullname {
 		margin-bottom: .375rem;
-		@include fixWidth(calc(100% - 2.8rem));
+		@include fixWidth(calc(100% - 3.1rem));
 		font-weight: var(--font-weight-bold);
 	}
 
-	&-LastMessage {
-		@include fixWidth(calc(100% - 2.8rem));
+	&-Last-Message {
+		@include fixWidth(calc(100% - 3.1rem));
 		opacity: .7;
 
 		&_active {
 			opacity: 1;
 		}
+
+		&-Date {
+			position: absolute;
+			top: 1.0625rem;
+			right: 0.875rem;
+			font-size: var(--font-size-small);
+			line-height: var(--line-height-small);
+			opacity: .7;
+		}
+	}
+
+	&-Not-Read-Count {
+		position: absolute;
+		right: .875rem;
+		bottom: .75rem;
+		padding: .125rem .375rem;
+		font-size: var(--font-size-small);
+		line-height: var(--line-height-small);
+		color: var(--white);
+		background-color: var(--blue-410);
+		border-radius: .6875rem;
+		box-shadow: var(--messages-not-read-count-shadow);
 	}
 }
-
-

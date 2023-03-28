@@ -5,6 +5,7 @@
 	text-transform: uppercase;
 
 	&-Item {
+		position: relative;
 		@include flexVerticalCenter();
 		@include fixHeight(4.5rem);
 		padding: 0 1.75rem;
@@ -24,6 +25,7 @@
 	}
 
 	&-Icon {
+		position: relative;
 		margin-right: 1.25rem;
 	}
 
@@ -35,6 +37,27 @@
 		&_visible {
 			transform: scale(1, 1);
 			opacity: 1
+		}
+	}
+
+	&-Not-Read-Count {
+		position: absolute;
+		left: 2.8125rem;
+		top: 2.5rem;
+		padding: .19rem .3rem;
+		font-size: var(--font-size-extra-small);
+		line-height: var(--font-size-extra-small);
+		background-color: var(--red-500);
+		box-shadow: var(--messages-not-read-count-shadow);
+		border-radius: .6875rem;
+		transition-property: font-size, line-height, padding, left, top;
+
+		&_visible {
+			left: calc(100% - 2.8125rem);
+			top: 36%;
+			padding: .22rem .47rem;
+			font-size: var(--font-size-small);
+			line-height: var(--line-height-small);
 		}
 	}
 }

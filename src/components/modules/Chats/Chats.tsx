@@ -11,14 +11,26 @@ import { observer } from 'mobx-react-lite'
 import { getFullName } from '@utils/common.utils'
 import { IChatsContact } from '@interfaces/chats.types'
 import { Scroll } from '@components/common/Scroll'
+import { getLastMessage } from '@utils/chats.utils'
 
 export const Chats: FC = observer(() => {
 		const styles = cn('Chats')
 
 		const { chatsContactList, searchContacthValue } = chats
 
+		const getSortedContacts = (): Array<IChatsContact> =>
+			JSON.parse(JSON.stringify(chatsContactList)).sort((a: IChatsContact, b: IChatsContact) => {
+				const lastMessageA = getLastMessage(a.messages)
+				const lastMessageB = getLastMessage(b.messages)
+
+				const dateA = lastMessageA ? lastMessageA.date.fullDate : '-1'
+				const dateB = lastMessageB ? lastMessageB.date.fullDate : '-1'
+
+				return dateA.localeCompare(dateB)
+			}).reverse()
+
 		const getFilteredContacts = (): Array<IChatsContact> =>
-			chatsContactList
+			getSortedContacts()
 				.filter(contact => {
 					const getString = (value: string): string =>
 						value

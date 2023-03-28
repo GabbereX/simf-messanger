@@ -5,7 +5,7 @@ import { cn } from '@bem-react/classname'
 import { Scroll } from '@components/common/Scroll'
 import chats from '@store/chats.store'
 import { observer } from 'mobx-react-lite'
-import { MessageContainer } from '@components/common/MessageContainer'
+import { MessageContainer } from '@components/modules/Messages/MessageContainer'
 import { compareDate } from '@utils/common.utils'
 
 export const MessagesBody: FC = observer(() => {
