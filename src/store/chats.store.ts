@@ -1,6 +1,6 @@
 import { chatsContact } from '@consts/chats.const'
 import { makeAutoObservable } from 'mobx'
-import { IChatsContact } from '@interfaces/chats.types'
+import { IChatsContact, IMessage } from '@interfaces/chats.types'
 import { ChangeEvent } from 'react'
 import { getSortedContacts } from '@utils/chats.utils'
 import { EStatus } from '@consts/common.const'
@@ -10,25 +10,36 @@ class ChatsContactStore {
 	searchContacthValue = ''
 	chatContactChecked: string = this.chatsContactList[0].id
 	notReadChatCount: number = 0
+	changeMessagesToggle: boolean = false
 
 	constructor() {
 		makeAutoObservable(this)
-	}
-
-	setUpdateContact(newDataContact: IChatsContact) {
-		this.chatsContactList = this.chatsContactList.map(contact => {
-			const { id } = newDataContact
-
-			if (id === contact.id) {
-				return newDataContact
-			} else return contact
-		})
 	}
 
 	setUpdateStatus(id: string, status: EStatus) {
 		this.chatsContactList.map(contact => {
 			if (contact.id === id) {
 				contact.status = status
+			}
+
+			return contact
+		})
+	}
+
+	setUpdateTypingStatus(id: string, typing: boolean) {
+		this.chatsContactList.map(contact => {
+			if (contact.id === id) {
+				contact.typing = typing
+			}
+
+			return contact
+		})
+	}
+
+	setAddNewMessage(message: IMessage, id: string) {
+		this.chatsContactList.map(contact => {
+			if (contact.id === id) {
+				contact.messages.push(message)
 			}
 
 			return contact
@@ -57,6 +68,10 @@ class ChatsContactStore {
 
 	setNotReadChatCount(count: number) {
 		this.notReadChatCount = count
+	}
+
+	setChangeMessagesToggle() {
+		this.changeMessagesToggle = !this.changeMessagesToggle
 	}
 }
 
