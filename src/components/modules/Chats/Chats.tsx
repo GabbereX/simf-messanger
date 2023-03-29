@@ -12,11 +12,15 @@ import { IChatsContact } from '@interfaces/chats.types'
 import { Scroll } from '@components/common/Scroll'
 import { getFullName } from '@utils/common.utils'
 import { getSortedContacts } from '@utils/chats.utils'
+import { EScrollContainer } from '@consts/common.const'
+import utils from '@store/utils.store'
 
 export const Chats: FC = observer(() => {
 		const styles = cn('Chats')
 
 		const { chatsContactList, searchContacthValue, chatContactChecked } = chats
+
+		const { isToolbarFullWidth: fullWidth } = utils
 
 		const getFilteredContacts = (): Array<IChatsContact> =>
 			getSortedContacts(chatsContactList)
@@ -35,10 +39,10 @@ export const Chats: FC = observer(() => {
 		}, [ chatContactChecked ])
 
 		return (
-			<div className={ styles() }>
+			<div className={ styles({ fullWidth }, [ 'transition' ]) }>
 				<ChatsSearchContact />
 
-				<Scroll container='Chats'>
+				<Scroll container={ EScrollContainer.CHATS }>
 					<ul className={ styles('List') }>
 						{
 							getFilteredContacts().length

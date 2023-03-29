@@ -19,3 +19,15 @@
 		opacity: .7;
 	}
 }
+
+@media (max-width: 1024px) {
+	.Chats {
+		padding-left: var(--toolbar-width);
+		transition-property: padding-left, max-width, min-width;
+
+		&_fullWidth {
+			padding-left: 0;
+			@include fixWidth(var(--toolbar-full-width));
+		}
+	}
+}

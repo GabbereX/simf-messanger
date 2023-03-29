@@ -6,6 +6,7 @@ import { Scroll } from '@components/common/Scroll'
 import { MessageContainer } from '@components/modules/Messages/MessageContainer'
 import { compareDate } from '@utils/common.utils'
 import { IChatsContact } from '@interfaces/chats.types'
+import { EScrollContainer } from '@consts/common.const'
 
 export const MessagesBody: FC<IChatsContact> = ({
 	id,
@@ -14,7 +15,7 @@ export const MessagesBody: FC<IChatsContact> = ({
 	const styles = cn('Messages-Body')
 
 	return (
-		<Scroll container='Messenger'>
+		<Scroll container={ EScrollContainer.MESSENGER }>
 			<div
 				className={ styles() }
 				style={ { height: !messages.length ? '100%' : 'auto' } }

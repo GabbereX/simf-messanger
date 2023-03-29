@@ -9,6 +9,11 @@ export const enum EStatus {
 	OFFLINE = 'offline'
 }
 
+export const enum EScrollContainer {
+	CHATS = 'Chats',
+	MESSENGER = 'Messenger'
+}
+
 export const month: Record<string, string> = {
 	'01': 'Января',
 	'02': 'Февраля',

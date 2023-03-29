@@ -7,9 +7,10 @@ import { cn } from '@bem-react/classname'
 import './Scroll.styles.scss'
 import { observer } from 'mobx-react-lite'
 import chats from '@store/chats.store'
+import { EScrollContainer } from '@consts/common.const'
 
 interface IProps extends IPropsWithChildren {
-	container: 'Chats' | 'Messenger'
+	container: EScrollContainer
 }
 
 export const Scroll: FC<IProps> = observer(({ children, container }) => {
@@ -20,7 +21,7 @@ export const Scroll: FC<IProps> = observer(({ children, container }) => {
 		const ref = useRef<Nullable<Scrollbars>>(null)
 
 		useEffect(() => {
-			if (ref.current && container === 'Messenger') {
+			if (ref.current && container === EScrollContainer.MESSENGER) {
 				ref.current.scrollToBottom()
 			}
 

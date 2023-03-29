@@ -40,3 +40,12 @@
 		@include fixWidth(var(--toolbar-full-width));
 	}
 }
+
+@media (max-width: 1024px) {
+	.Toolbar {
+		position: absolute;
+		@include fixHeight(100vh);
+		@include fixHeight(100svh);
+		z-index: 100;
+	}
+}
