@@ -1,5 +1,5 @@
-import { IProfile } from '@interfaces/profile.types'
 import { EMessageFlow } from '@consts/message.const'
+import { IProfile } from '@interfaces/profile.types'
 
 export interface IChatsContact extends IProfile {
 	id: string

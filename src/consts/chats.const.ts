@@ -1,5 +1,3 @@
-import { generateNumber } from '@utils/common.utils'
-
 import avatar_01 from '@assets/images/avatars/01.webp'
 import avatar_02 from '@assets/images/avatars/02.webp'
 import avatar_03 from '@assets/images/avatars/03.webp'
@@ -8,9 +6,13 @@ import avatar_05 from '@assets/images/avatars/05.webp'
 import avatar_06 from '@assets/images/avatars/06.webp'
 import avatar_07 from '@assets/images/avatars/07.webp'
 import avatar_08 from '@assets/images/avatars/08.webp'
-import { EStatus } from '@consts/common.const'
-import { IChatsContact } from '@interfaces/chats.types'
+
+import { generateNumber } from '@utils/common.utils'
 import { getFakeMessages } from '@utils/fakeData.utils'
+
+import { EStatus } from '@consts/common.const'
+
+import { IChatsContact } from '@interfaces/chats.types'
 
 export const chatsContact: Array<IChatsContact> = [
 	{

@@ -1,5 +1,5 @@
-import { Nullable } from './common.types'
 import { EStatus } from '@consts/common.const'
+import { Nullable } from './common.types'
 
 export interface IProfile {
 	avatar: Nullable<string>

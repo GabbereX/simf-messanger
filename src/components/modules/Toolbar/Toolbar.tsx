@@ -3,8 +3,8 @@ import { FC } from 'react'
 import { observer } from 'mobx-react-lite'
 
 import { ToolbarProfile } from './ToolbarProfile'
-import { ToolbarNavigation } from './ToolbarNavigation'
 import { Icon } from '@components/common/Icon'
+import { ToolbarNavigation } from './ToolbarNavigation'
 
 import utils from '@store/utils.store'
 

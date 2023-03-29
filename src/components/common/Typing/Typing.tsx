@@ -1,4 +1,5 @@
 import { cn } from '@bem-react/classname'
+
 import { FC } from 'react'
 
 import './Typing.styles.scss'

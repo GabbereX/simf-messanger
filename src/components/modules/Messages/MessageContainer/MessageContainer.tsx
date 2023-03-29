@@ -1,11 +1,13 @@
+import { cn } from '@bem-react/classname'
 import { FC, Fragment } from 'react'
+import dayjs from 'dayjs'
+import { observer } from 'mobx-react-lite'
+
+import { month } from '@consts/common.const'
+
+import { IMessage } from '@interfaces/chats.types'
 
 import './MessageContainer.styles.scss'
-import { cn } from '@bem-react/classname'
-import { IMessage } from '@interfaces/chats.types'
-import { observer } from 'mobx-react-lite'
-import { month } from '@consts/common.const'
-import dayjs from 'dayjs'
 
 interface IProps extends IMessage {
 	isDataLabel: boolean

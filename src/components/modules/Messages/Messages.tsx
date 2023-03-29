@@ -1,14 +1,16 @@
 import { cn } from '@bem-react/classname'
 import { FC } from 'react'
+import { observer } from 'mobx-react-lite'
 
 import { MessagesHeader } from './MessagesHeader'
 import { MessagesBody } from './MessagesBody'
 import { MessagesFooter } from './MessagesFooter'
 
-import './Messages.styles.scss'
-import chats from '@store/chats.store'
 import { getCurrentChat } from '@utils/chats.utils'
-import { observer } from 'mobx-react-lite'
+
+import chats from '@store/chats.store'
+
+import './Messages.styles.scss'
 
 export const Messages: FC = observer(() => {
 		const styles = cn('Messages')

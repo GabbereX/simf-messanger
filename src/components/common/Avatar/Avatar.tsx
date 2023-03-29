@@ -3,10 +3,11 @@ import { FC } from 'react'
 
 import { ESize } from '@consts/common.const'
 
+import { getAvatarColor } from '@utils/common.utils'
+
 import { Nullable } from '@interfaces/common.types'
 
 import './Avatar.styles.scss'
-import { getAvatarColor } from '@utils/common.utils'
 
 interface IProps {
 	src: Nullable<string>

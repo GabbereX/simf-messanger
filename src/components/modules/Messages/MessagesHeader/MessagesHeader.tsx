@@ -1,11 +1,14 @@
 import { cn } from '@bem-react/classname'
 import { FC } from 'react'
 
-import './MessagesHeader.styles.scss'
 import { getFullName } from '@utils/common.utils'
+
 import { Typing } from '@components/common/Typing'
 import { Status } from '@components/common/Status'
+
 import { IChatsContact } from '@interfaces/chats.types'
+
+import './MessagesHeader.styles.scss'
 
 export const MessagesHeader: FC<IChatsContact> = (currentChat) => {
 	const styles = cn('Messages-Header')

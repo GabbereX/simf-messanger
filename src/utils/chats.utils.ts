@@ -1,6 +1,7 @@
+import dayjs from 'dayjs'
+
 import { IChatsContact, IMessage } from '@interfaces/chats.types'
 import { Nullable } from '@interfaces/common.types'
-import dayjs from 'dayjs'
 
 export const getLastMessage = (messages: Array<IMessage>): Nullable<IMessage> =>
 	messages.length ? messages[messages.length - 1] : null

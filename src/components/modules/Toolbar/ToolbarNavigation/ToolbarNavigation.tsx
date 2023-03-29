@@ -1,12 +1,13 @@
 import { cn } from '@bem-react/classname'
 import { FC, useEffect, useState } from 'react'
+import { observer } from 'mobx-react-lite'
 
 import { ENavigation, toolbarConsts } from '@consts/toolbar.consts'
 
-import './ToolbarNavigation.styles.scss'
 import utils from '@store/utils.store'
 import chats from '@store/chats.store'
-import { observer } from 'mobx-react-lite'
+
+import './ToolbarNavigation.styles.scss'
 
 export const ToolbarNavigation: FC = observer(() => {
 		const [ isChecked, setIsChecked ] = useState<string>(ENavigation.DIALOGS)

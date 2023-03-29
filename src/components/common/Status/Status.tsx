@@ -2,6 +2,7 @@ import { cn } from '@bem-react/classname'
 import { FC } from 'react'
 
 import { EStatus } from '@consts/common.const'
+
 import './Status.styles.scss'
 
 interface IProps {

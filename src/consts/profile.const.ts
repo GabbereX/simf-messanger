@@ -1,8 +1,8 @@
-import { IProfile } from '@interfaces/profile.types'
-
 import photo from '@assets/images/avatars/profile-avatar.webp'
 
 import { EStatus } from '@consts/common.const'
+
+import { IProfile } from '@interfaces/profile.types'
 
 export const profileFakeData: IProfile = {
 	avatar: photo,

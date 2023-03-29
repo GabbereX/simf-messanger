@@ -1,9 +1,12 @@
-import { chatsContact } from '@consts/chats.const'
 import { makeAutoObservable } from 'mobx'
-import { IChatsContact, IMessage } from '@interfaces/chats.types'
 import { ChangeEvent } from 'react'
+
 import { getSortedContacts } from '@utils/chats.utils'
+
+import { chatsContact } from '@consts/chats.const'
 import { EStatus } from '@consts/common.const'
+
+import { IChatsContact, IMessage } from '@interfaces/chats.types'
 
 class ChatsContactStore {
 	chatsContactList: Array<IChatsContact> = getSortedContacts(chatsContact)

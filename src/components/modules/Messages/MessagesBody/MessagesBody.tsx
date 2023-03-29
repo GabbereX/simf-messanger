@@ -1,12 +1,16 @@
+import { cn } from '@bem-react/classname'
 import { FC } from 'react'
 
-import './MessagesBody.styles.scss'
-import { cn } from '@bem-react/classname'
 import { Scroll } from '@components/common/Scroll'
-import { MessageContainer } from '@components/modules/Messages/MessageContainer'
+import { MessageContainer } from '../MessageContainer'
+
 import { compareDate } from '@utils/common.utils'
-import { IChatsContact } from '@interfaces/chats.types'
+
 import { EScrollContainer } from '@consts/common.const'
+
+import { IChatsContact } from '@interfaces/chats.types'
+
+import './MessagesBody.styles.scss'
 
 export const MessagesBody: FC<IChatsContact> = ({
 	id,
@@ -43,4 +47,3 @@ export const MessagesBody: FC<IChatsContact> = ({
 		</Scroll>
 	)
 }
-

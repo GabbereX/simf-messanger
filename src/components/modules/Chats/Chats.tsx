@@ -1,19 +1,22 @@
 import { cn } from '@bem-react/classname'
 import { FC, useEffect } from 'react'
-
-import { ChatsSearchContact } from '@components/modules/Chats/ChatsSearchContact'
-import { ChatsContact } from '@components/modules/Chats/ChatsContact'
-
-import chats from '@store/chats.store'
-
-import './Chats.styles.scss'
 import { observer } from 'mobx-react-lite'
-import { IChatsContact } from '@interfaces/chats.types'
+
+import { ChatsSearchContact } from './ChatsSearchContact'
+import { ChatsContact } from './ChatsContact'
 import { Scroll } from '@components/common/Scroll'
+
 import { getFullName } from '@utils/common.utils'
 import { getSortedContacts } from '@utils/chats.utils'
+
 import { EScrollContainer } from '@consts/common.const'
+
+import chats from '@store/chats.store'
 import utils from '@store/utils.store'
+
+import { IChatsContact } from '@interfaces/chats.types'
+
+import './Chats.styles.scss'
 
 export const Chats: FC = observer(() => {
 		const styles = cn('Chats')

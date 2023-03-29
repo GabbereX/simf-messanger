@@ -1,8 +1,9 @@
+import { cn } from '@bem-react/classname'
 import { FC, useState } from 'react'
 
-import './MessagesFooter.styles.scss'
-import { cn } from '@bem-react/classname'
 import { Input } from '@components/common/Input'
+
+import './MessagesFooter.styles.scss'
 
 export const MessagesFooter: FC = () => {
 	const styles = cn('Messages-Footer')

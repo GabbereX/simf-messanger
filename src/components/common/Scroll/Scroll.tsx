@@ -1,13 +1,15 @@
-import { FC, useEffect, useRef } from 'react'
-
-import { Scrollbars } from 'react-custom-scrollbars-2'
-import { IPropsWithChildren, Nullable } from '@interfaces/common.types'
 import { cn } from '@bem-react/classname'
+import { FC, useEffect, useRef } from 'react'
+import { Scrollbars } from 'react-custom-scrollbars-2'
+import { observer } from 'mobx-react-lite'
+
+import { EScrollContainer } from '@consts/common.const'
+
+import chats from '@store/chats.store'
+
+import { IPropsWithChildren, Nullable } from '@interfaces/common.types'
 
 import './Scroll.styles.scss'
-import { observer } from 'mobx-react-lite'
-import chats from '@store/chats.store'
-import { EScrollContainer } from '@consts/common.const'
 
 interface IProps extends IPropsWithChildren {
 	container: EScrollContainer

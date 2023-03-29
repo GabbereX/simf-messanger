@@ -1,11 +1,12 @@
-import { FC } from 'react'
-
-import './ChatsSearchContact.styles.scss'
 import { cn } from '@bem-react/classname'
+import { FC } from 'react'
+import { observer } from 'mobx-react-lite'
+
 import { Input } from '@components/common/Input'
 
 import chats from '@store/chats.store'
-import { observer } from 'mobx-react-lite'
+
+import './ChatsSearchContact.styles.scss'
 
 export const ChatsSearchContact: FC = observer(() => {
 		const styles = cn('Chats-Search-Contact')

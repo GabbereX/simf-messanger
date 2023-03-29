@@ -2,14 +2,16 @@ import { cn } from '@bem-react/classname'
 import { FC } from 'react'
 
 import { getFullName } from '@utils/common.utils'
+
 import { profileFakeData } from '@consts/profile.const'
 import { ESize } from '@consts/common.const'
 
 import { Avatar } from '@components/common/Avatar'
+import { Status } from '@components/common/Status'
+
+import utils from '@store/utils.store'
 
 import './ToolbarProfile.styles.scss'
-import utils from '@store/utils.store'
-import { Status } from '@components/common/Status'
 
 export const ToolbarProfile: FC = () => {
 	const { avatar, status } = profileFakeData

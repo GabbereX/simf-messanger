@@ -1,11 +1,15 @@
-import { getMessage, getRandomNumber } from '@utils/fakeData.utils'
-import { EStatus } from '@consts/common.const'
-import chats from '@store/chats.store'
-import { getCurrentChat } from '@utils/chats.utils'
-import { IMessage } from '@interfaces/chats.types'
-import { EMessageFlow } from '@consts/message.const'
-import { getDate } from '@utils/common.utils'
 import dayjs from 'dayjs'
+
+import { getMessage, getRandomNumber } from '@utils/fakeData.utils'
+import { getDate } from '@utils/common.utils'
+import { getCurrentChat } from '@utils/chats.utils'
+
+import { EStatus } from '@consts/common.const'
+import { EMessageFlow } from '@consts/message.const'
+
+import chats from '@store/chats.store'
+
+import { IMessage } from '@interfaces/chats.types'
 
 export const useFakeContactActivity = (id: string) => {
 	const startFakeContactActivity = () => {

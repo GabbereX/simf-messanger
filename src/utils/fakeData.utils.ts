@@ -1,7 +1,6 @@
-import 'dayjs/locale/ru'
 import { EMessageFlow, wordsCollection } from '@consts/message.const'
-import { IMessage } from '@interfaces/chats.types'
 import { getDate } from '@utils/common.utils'
+import { IMessage } from '@interfaces/chats.types'
 
 export const getRandomNumber = (min: number, max: number): number =>
 	Math.floor(Math.random() * (max - min + 1) + min)
